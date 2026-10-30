@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 3,
+  "id": "grwm/velvet-accessory-tray-668382bd90@2",
+  "version": 2,
+  "type": "prop",
+  "name": "Velvet-Lined Accessory Tray",
+  "bounds": [
+    [
+      -0.739955723285675,
+      -0.019999999552965164,
+      -0.44995570182800293
+    ],
+    [
+      0.739955723285675,
+      0.04749999940395355,
+      0.44995570182800293
+    ]
+  ],
+  "sourceScene": 1,
+  "sourceVersion": "v4",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "reviewStatus": "work-in-progress",
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "",
+  "tags": [],
+  "parts": [
+    {
+      "partId": "part-1",
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "deformability": 0,
+      "label": "grounded accessory tray frame",
+      "joint": null,
+      "surface_center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface_normal": [
+        0.07378226518630981,
+        0.04918817803263664,
+        0.9960606098175049
+      ],
+      "glint_anchors": [
+        {
+          "point": [
+            -0.7351414561271667,
+            0.00504714623093605,
+            0.445141464471817
+          ],
+          "normal": [
+            -0.68824702501297,
+            0.2294156402349472,
+            0.6882474422454834
+          ]
+        },
+        {
+          "point": [
+            0.7338100671768188,
+            0.010127384215593338,
+            0.4438100755214691
+          ],
+          "normal": [
+            0.6277303695678711,
+            0.460335373878479,
+            0.6277307868003845
+          ]
+        },
+        {
+          "point": [
+            -0.6413333415985107,
+            0.015556348487734795,
+            0.4455563426017761
+          ],
+          "normal": [
+            0.0,
+            0.7071068286895752,
+            0.7071067094802856
+          ]
+        }
+      ]
+    },
+    {
+      "partId": "part-2",
+      "pos": [
+        0,
+        0.035,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "deformability": 0,
+      "label": "fitted rose velvet accessory insert",
+      "joint": null,
+      "surface_center": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface_normal": [
+        0.9480072259902954,
+        0.19613942503929138,
+        0.25062260031700134
+      ],
+      "glint_anchors": []
+    }
+  ],
+  "modelId": "ymir/model-39501005f134b072@1",
+  "model": "models/39501005f134b072/model.json",
+  "variants": [
+    {
+      "id": "default",
+      "name": "Original Finish",
+      "description": "",
+      "tags": [],
+      "slots": [],
+      "partMetadata": [
+        {
+          "partId": "part-1"
+        },
+        {
+          "partId": "part-2"
+        }
+      ]
+    }
+  ],
+  "defaultVariant": "default",
+  "slots": [
+    {
+      "slotId": "surface-1",
+      "material": {
+        "id": "grwm/studio-surface@3",
+        "parameters": {
+          "rough": 0.39,
+          "metal": 0.96,
+          "gold_finish": true
+        }
+      },
+      "color": {
+        "id": "ymir/palette-c5345beaaa1071@1"
+      }
+    },
+    {
+      "slotId": "surface-2",
+      "material": {
+        "id": "grwm/velvet-fuzz@3",
+        "parameters": {
+          "rough": 0.97,
+          "metal": 0,
+          "gold_finish": false
+        }
+      },
+      "color": {
+        "id": "ymir/palette-4d1e8789be93c7@1"
+      }
+    }
+  ]
+}

@@ -62,7 +62,7 @@ async function select(entry,{variant=entry.defaultVariant,previewMaterial,previe
     }):[];
     $('details').textContent=JSON.stringify({asset:entry,...(modelEntry?{model:{id:modelEntry.id,name:modelEntry.name,partCount:modelEntry.partCount}}:{}),...(variant?{selectedVariant:entry.variants?.find(v=>v.id===variant)}:{})},null,2);
     $('swatch-controls').hidden=!['material','color'].includes(entry.type);
-    if(!$('swatch-controls').hidden){fillResources($('swatch-material'),'material',material.id);fillColorResources($('swatch-color'),material,previewColor===undefined&&entry.type==='material'||previewColor===''?'':color.id);$('save-material-default').hidden=entry.type!=='material';$('save-material-default').disabled=!$('swatch-color').value;$('material-default-status').textContent='';}
+    if(!$('swatch-controls').hidden){fillResources($('swatch-material'),'material',material.id);fillColorResources($('swatch-color'),material,previewColor===undefined&&entry.type==='material'||previewColor===''?'':color.id);$('save-material-default').hidden=readOnly||entry.type!=='material';$('save-material-default').disabled=!$('swatch-color').value;$('material-default-status').textContent='';}
     $('surface-editor').hidden=readOnly||!['prop','model'].includes(entry.type);
     if(!$('surface-editor').hidden){surfaceState=await api(`/api/asset?id=${encodeURIComponent(entry.id)}`);if(token!==generation)return;configureSurface(entry.type==='model'?prop.asset:surfaceState.model);}
     for(const button of $('list').children)button.setAttribute('aria-pressed',button.dataset.id===entry.id||$('type').value==='prop'&&button.dataset.id===entry.modelId?'true':'false');
@@ -256,5 +256,5 @@ function animate(t){
   }
   requestAnimationFrame(animate);
 }requestAnimationFrame(animate);
-await select(library.catalog.assets.find(a=>a.sourceVersion==='v4'&&/mirror/i.test(a.name))??library.catalog.assets[0]);
+await select(readOnly?library.catalog.assets.find(a=>a.type==='prop')??library.catalog.assets[0]:library.catalog.assets.find(a=>a.sourceVersion==='v4'&&/mirror/i.test(a.name))??library.catalog.assets[0]);
 window.__ymir={get catalog(){return library.catalog;},select,draw,get rotation(){return turn;},get zoom(){return zoom;}};

@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 3,
+  "id": "grwm/faceted-crystal@1",
+  "version": 1,
+  "type": "prop",
+  "name": "Faceted Accent Crystal",
+  "bounds": [
+    [
+      -0.034645482897758484,
+      -0.03449999913573265,
+      -0.034645482897758484
+    ],
+    [
+      0.034645482897758484,
+      0.012000000104308128,
+      0.034645482897758484
+    ]
+  ],
+  "sourceScene": 2,
+  "reviewStatus": "work-in-progress",
+  "license": "Unverified project provenance; see provenance.json.",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "materialUpgrade": "v4; original v3 geometry retained",
+  "description": "",
+  "tags": [],
+  "variants": [
+    {
+      "id": "variant-1",
+      "name": "Pearl",
+      "description": "",
+      "tags": [],
+      "sourceAssetId": "grwm/hato-ornament-4288625920@1",
+      "slots": [],
+      "partMetadata": [
+        {
+          "partId": "part-1",
+          "surface_normal": [
+            -7.998851359047876e-09,
+            1.0,
+            -5.3325681648175305e-09
+          ],
+          "surface_center": [
+            0.0,
+            -0.011249999515712261,
+            0.0
+          ],
+          "glint_anchors": [
+            {
+              "point": [
+                -0.008911100216209888,
+                0.01357150636613369,
+                0.02027621865272522
+              ],
+              "normal": [
+                -0.4373740553855896,
+                0.785753071308136,
+                0.4373740553855896
+              ]
+            },
+            {
+              "point": [
+                0.02027621865272522,
+                0.01357150636613369,
+                0.008911100216209888
+              ],
+              "normal": [
+                0.4373740553855896,
+                0.785753071308136,
+                0.4373740553855896
+              ]
+            },
+            {
+              "point": [
+                0.008036351762712002,
+                0.01357150636613369,
+                0.02063855156302452
+              ],
+              "normal": [
+                0.0,
+                0.785753071308136,
+                0.618540346622467
+              ]
+            }
+          ],
+          "label": "mounted accent crystal"
+        }
+      ]
+    },
+    {
+      "id": "variant-2",
+      "name": "Gold",
+      "description": "",
+      "tags": [],
+      "sourceAssetId": "grwm/perccow-ornament-7e99b3d889@1",
+      "slots": [
+        {
+          "slotId": "surface-1",
+          "material": {
+            "id": "grwm/reflective-surface@3",
+            "parameters": {
+              "rough": 0.09,
+              "metal": 0.65,
+              "gold_finish": false
+            }
+          },
+          "color": {
+            "id": "ymir/color-d60cf4127bcea3@1"
+          }
+        }
+      ],
+      "partMetadata": [
+        {
+          "partId": "part-1",
+          "surface_normal": [
+            -7.998851359047876e-09,
+            1.0,
+            -5.3325681648175305e-09
+          ],
+          "surface_center": [
+            0.0,
+            -0.011249999515712261,
+            0.0
+          ],
+          "glint_anchors": [
+            {
+              "point": [
+                -0.008911100216209888,
+                0.01357150636613369,
+                0.02027621865272522
+              ],
+              "normal": [
+                -0.4373740553855896,
+                0.785753071308136,
+                0.4373740553855896
+              ]
+            },
+            {
+              "point": [
+                0.02027621865272522,
+                0.01357150636613369,
+                0.008911100216209888
+              ],
+              "normal": [
+                0.4373740553855896,
+                0.785753071308136,
+                0.4373740553855896
+              ]
+            },
+            {
+              "point": [
+                0.008036351762712002,
+                0.01357150636613369,
+                0.02063855156302452
+              ],
+              "normal": [
+                0.0,
+                0.785753071308136,
+                0.618540346622467
+              ]
+            }
+          ],
+          "label": "mounted accent crystal"
+        }
+      ]
+    }
+  ],
+  "defaultVariant": "variant-1",
+  "sourceVersion": "v3",
+  "parts": [
+    {
+      "partId": "part-1",
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "deformability": 0,
+      "label": "mounted accent crystal",
+      "joint": null,
+      "surface_center": [
+        0.0,
+        -0.011249999515712261,
+        0.0
+      ],
+      "surface_normal": [
+        -7.998851359047876e-09,
+        1.0,
+        -5.3325681648175305e-09
+      ],
+      "glint_anchors": [
+        {
+          "point": [
+            -0.008911100216209888,
+            0.01357150636613369,
+            0.02027621865272522
+          ],
+          "normal": [
+            -0.4373740553855896,
+            0.785753071308136,
+            0.4373740553855896
+          ]
+        },
+        {
+          "point": [
+            0.02027621865272522,
+            0.01357150636613369,
+            0.008911100216209888
+          ],
+          "normal": [
+            0.4373740553855896,
+            0.785753071308136,
+            0.4373740553855896
+          ]
+        },
+        {
+          "point": [
+            0.008036351762712002,
+            0.01357150636613369,
+            0.02063855156302452
+          ],
+          "normal": [
+            0.0,
+            0.785753071308136,
+            0.618540346622467
+          ]
+        }
+      ]
+    }
+  ],
+  "modelId": "ymir/model-31787465f69ace95@1",
+  "model": "models/31787465f69ace95/model.json",
+  "slots": [
+    {
+      "slotId": "surface-1",
+      "material": {
+        "id": "grwm/reflective-surface@3",
+        "parameters": {
+          "rough": 0.09,
+          "metal": 0.65,
+          "gold_finish": false
+        }
+      },
+      "color": {
+        "id": "ymir/color-b24b7d82828478@1"
+      }
+    }
+  ]
+}

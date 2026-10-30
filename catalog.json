@@ -5,98 +5,11 @@
     {
       "schemaVersion": 2,
       "type": "model",
-      "id": "ymir/model-31787465f69ace95@1",
-      "name": "Faceted Accent Crystal",
-      "description": "",
-      "tags": [],
-      "license": "Unverified; see README.md#licensing.",
-      "manifest": "models/31787465f69ace95/model.json",
-      "partCount": 1,
-      "slots": [
-        {
-          "id": "surface-1",
-          "name": "Mounted Accent Crystal",
-          "partIds": [
-            "part-1"
-          ]
-        }
-      ]
-    },
-    {
-      "schemaVersion": 2,
-      "type": "model",
-      "id": "ymir/model-76d7f6bdae9c766c@1",
-      "name": "Polished Hairpin",
-      "description": "",
-      "tags": [],
-      "license": "Unverified; see README.md#licensing.",
-      "manifest": "models/76d7f6bdae9c766c/model.json",
-      "partCount": 1,
-      "slots": [
-        {
-          "id": "surface-1",
-          "name": "Small Polished Hairpin",
-          "partIds": [
-            "part-1"
-          ]
-        }
-      ]
-    },
-    {
-      "schemaVersion": 2,
-      "type": "model",
-      "id": "ymir/model-ba57602d3d1f608c@1",
-      "name": "Mounted Faceted Crystal",
-      "description": "",
-      "tags": [],
-      "license": "Unverified; see README.md#licensing.",
-      "manifest": "models/ba57602d3d1f608c/model.json",
-      "partCount": 2,
-      "slots": [
-        {
-          "id": "surface-1",
-          "name": "Flat-Bottomed Gold Crystal Setting",
-          "partIds": [
-            "part-1"
-          ]
-        },
-        {
-          "id": "surface-2",
-          "name": "Supported Faceted Vanity Crystal",
-          "partIds": [
-            "part-2"
-          ]
-        }
-      ]
-    },
-    {
-      "schemaVersion": 2,
-      "type": "model",
-      "id": "ymir/model-c77ea06b3c6e506c@1",
-      "name": "Curved Gold Hair Clip",
-      "description": "",
-      "tags": [],
-      "license": "Unverified; see README.md#licensing.",
-      "manifest": "models/c77ea06b3c6e506c/model.json",
-      "partCount": 1,
-      "slots": [
-        {
-          "id": "surface-1",
-          "name": "Staged Curved Gold Vanity Clip",
-          "partIds": [
-            "part-1"
-          ]
-        }
-      ]
-    },
-    {
-      "schemaVersion": 2,
-      "type": "model",
       "id": "ymir/model-60b00e9a58b9c179@1",
       "name": "Nail Polish Applicator",
       "description": "",
       "tags": [],
-      "license": "Unverified; see README.md#licensing.",
+      "license": "Unverified project provenance; see provenance.json.",
       "manifest": "models/60b00e9a58b9c179/model.json",
       "partCount": 3,
       "slots": [
@@ -122,298 +35,654 @@
           ]
         }
       ]
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-c77ea06b3c6e506c@1",
+      "name": "Curved Gold Hair Clip",
+      "description": "",
+      "tags": [],
+      "license": "Unverified project provenance; see provenance-v4.json.",
+      "manifest": "models/c77ea06b3c6e506c/model.json",
+      "partCount": 1,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Staged Curved Gold Vanity Clip",
+          "partIds": [
+            "part-1"
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-39501005f134b072@1",
+      "name": "Velvet-Lined Accessory Tray",
+      "description": "",
+      "tags": [],
+      "license": "Unverified project provenance; see provenance-v4.json.",
+      "manifest": "models/39501005f134b072/model.json",
+      "partCount": 2,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Grounded Accessory Tray Frame",
+          "partIds": [
+            "part-1"
+          ]
+        },
+        {
+          "id": "surface-2",
+          "name": "Fitted Rose Velvet Accessory Insert",
+          "partIds": [
+            "part-2"
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-8a0fc2c01a8b9994@1",
+      "name": "Gift Silk Ribbon",
+      "description": "",
+      "tags": [],
+      "license": "Unverified project provenance; see provenance.json.",
+      "manifest": "models/8a0fc2c01a8b9994/model.json",
+      "partCount": 1,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Clearance-Routed Gift Ribbon",
+          "partIds": [
+            "part-1"
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-31787465f69ace95@1",
+      "name": "Faceted Accent Crystal",
+      "description": "",
+      "tags": [],
+      "license": "Unverified project provenance; see provenance.json.",
+      "manifest": "models/31787465f69ace95/model.json",
+      "partCount": 1,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Mounted Accent Crystal",
+          "partIds": [
+            "part-1"
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": 3,
+      "id": "grwm/faceted-crystal@1",
+      "version": 1,
+      "type": "prop",
+      "name": "Faceted Accent Crystal",
+      "bounds": [
+        [
+          -0.034645482897758484,
+          -0.03449999913573265,
+          -0.034645482897758484
+        ],
+        [
+          0.034645482897758484,
+          0.012000000104308128,
+          0.034645482897758484
+        ]
+      ],
+      "sourceScene": 2,
+      "reviewStatus": "work-in-progress",
+      "license": "Unverified; see README.md#licensing.",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "materialUpgrade": "v4; original v3 geometry retained",
+      "description": "",
+      "tags": [],
+      "defaultVariant": "variant-1",
+      "sourceVersion": "v3",
+      "manifest": "props/faceted-crystal/asset.json",
+      "variants": [
+        {
+          "id": "variant-1",
+          "name": "Pearl",
+          "description": "",
+          "tags": [],
+          "sourceAssetId": "grwm/hato-ornament-4288625920@1"
+        },
+        {
+          "id": "variant-2",
+          "name": "Gold",
+          "description": "",
+          "tags": [],
+          "sourceAssetId": "grwm/perccow-ornament-7e99b3d889@1"
+        }
+      ],
+      "modelId": "ymir/model-31787465f69ace95@1",
+      "model": "models/31787465f69ace95/model.json"
+    },
+    {
+      "schemaVersion": 3,
+      "id": "grwm/hatc-gold-clip-dc7c5a60a1@2",
+      "version": 2,
+      "type": "prop",
+      "name": "Curved Gold Hair Clip",
+      "bounds": [
+        [
+          -0.09710408002138138,
+          0.000850000127684325,
+          -0.13842128217220306
+        ],
+        [
+          0.09710408002138138,
+          0.0251499991863966,
+          0.11002500355243683
+        ]
+      ],
+      "sourceScene": 1,
+      "sourceVersion": "v4",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "reviewStatus": "work-in-progress",
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "props/hatc-gold-clip-dc7c5a60a1-v4/asset.json",
+      "modelId": "ymir/model-c77ea06b3c6e506c@1",
+      "model": "models/c77ea06b3c6e506c/model.json",
+      "defaultVariant": "default",
+      "variants": [
+        {
+          "id": "default",
+          "name": "Original Finish",
+          "description": "",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "id": "grwm/floating-polish-applicator-dd40c98553@1",
+      "type": "prop",
+      "name": "Nail Polish Applicator",
+      "version": 1,
+      "bounds": [
+        [
+          -0.15000000596046448,
+          -0.8403612375259399,
+          -0.15000000596046448
+        ],
+        [
+          0.15000000596046448,
+          0.38999998569488525,
+          0.15000000596046448
+        ]
+      ],
+      "sourceScene": 2,
+      "reviewStatus": "work-in-progress",
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "props/floating-polish-applicator-dd40c98553/asset.json",
+      "sourceVersion": "v3",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "materialUpgrade": "v4; original v3 geometry retained",
+      "schemaVersion": 3,
+      "modelId": "ymir/model-60b00e9a58b9c179@1",
+      "model": "models/60b00e9a58b9c179/model.json",
+      "defaultVariant": "default",
+      "variants": [
+        {
+          "id": "default",
+          "name": "Original Finish",
+          "description": "",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "id": "grwm/gift-connecting-silk-881b1bf633@1",
+      "type": "prop",
+      "name": "Gift Silk Ribbon",
+      "version": 1,
+      "bounds": [
+        [
+          -1.6939334869384766,
+          -0.8117888569831848,
+          -0.07867512851953506
+        ],
+        [
+          1.598507285118103,
+          2.0081868171691895,
+          0.0007063407101668417
+        ]
+      ],
+      "sourceScene": 15,
+      "reviewStatus": "work-in-progress",
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "props/gift-connecting-silk-881b1bf633/asset.json",
+      "sourceVersion": "v3",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "materialUpgrade": "v4; original v3 geometry retained",
+      "schemaVersion": 3,
+      "modelId": "ymir/model-8a0fc2c01a8b9994@1",
+      "model": "models/8a0fc2c01a8b9994/model.json",
+      "defaultVariant": "default",
+      "variants": [
+        {
+          "id": "default",
+          "name": "Original Finish",
+          "description": "",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "schemaVersion": 3,
+      "id": "grwm/velvet-accessory-tray-668382bd90@2",
+      "version": 2,
+      "type": "prop",
+      "name": "Velvet-Lined Accessory Tray",
+      "bounds": [
+        [
+          -0.739955723285675,
+          -0.019999999552965164,
+          -0.44995570182800293
+        ],
+        [
+          0.739955723285675,
+          0.04749999940395355,
+          0.44995570182800293
+        ]
+      ],
+      "sourceScene": 1,
+      "sourceVersion": "v4",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "reviewStatus": "work-in-progress",
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "props/velvet-accessory-tray-668382bd90-v4/asset.json",
+      "modelId": "ymir/model-39501005f134b072@1",
+      "model": "models/39501005f134b072/model.json",
+      "defaultVariant": "default",
+      "variants": [
+        {
+          "id": "default",
+          "name": "Original Finish",
+          "description": "",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "grwm/studio-surface@3",
+      "name": "Smooth Surface",
+      "type": "material",
+      "version": 3,
+      "suite": "ymir-surfaces@1",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "profile": 0,
+      "sourceVersion": "v4",
+      "parameters": {
+        "rough": 0.35,
+        "metal": 0,
+        "gold_finish": false,
+        "matte_support": false
+      },
+      "license": "Unverified project provenance; see provenance-v4.json.",
+      "manifest": "materials/surfaces/studio-surface/material.json",
+      "description": "Smooth micrograin finish with adjustable roughness and metalness. Existing slot overrides determine whether it represents polished metal, a satin metal finish, or a nonmetallic surface.",
+      "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "grwm/velvet-fuzz@3",
+      "name": "Soft Pile Fabric",
+      "type": "material",
+      "version": 3,
+      "suite": "ymir-surfaces@1",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "profile": 4,
+      "sourceVersion": "v4",
+      "parameters": {
+        "rough": 0.35,
+        "metal": 0,
+        "gold_finish": false,
+        "matte_support": false
+      },
+      "license": "Unverified project provenance; see provenance-v4.json.",
+      "manifest": "materials/surfaces/velvet-fuzz/material.json",
+      "description": "Fine fuzzy pile with a soft grazing-angle sheen.",
+      "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "grwm/reflective-surface@3",
+      "name": "Mirror Glass",
+      "type": "material",
+      "version": 3,
+      "suite": "ymir-surfaces@1",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "profile": 3,
+      "sourceVersion": "v4",
+      "parameters": {
+        "rough": 0.35,
+        "metal": 0,
+        "gold_finish": false,
+        "matte_support": false
+      },
+      "license": "Unverified project provenance; see provenance-v4.json.",
+      "manifest": "materials/surfaces/reflective-surface/material.json",
+      "description": "Highly reflective glass surface with softened environment reflections.",
+      "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "grwm/woven-satin@3",
+      "name": "Silk \u00b7 Satin Weave",
+      "type": "material",
+      "version": 3,
+      "suite": "ymir-surfaces@1",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "profile": 1,
+      "sourceVersion": "v4",
+      "parameters": {
+        "rough": 0.35,
+        "metal": 0,
+        "gold_finish": false,
+        "matte_support": false
+      },
+      "license": "Unverified project provenance; see provenance-v4.json.",
+      "manifest": "materials/surfaces/woven-satin/material.json",
+      "description": "Surface response and microgeometry, independent of Color.",
+      "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/color-b24b7d82828478@1",
+      "name": "Solid Ivory",
+      "description": "Reusable albedo only; does not set surface roughness, normals or lighting.",
+      "tags": [
+        "solid",
+        "palette"
+      ],
+      "parameters": {
+        "primary": [
+          0.92,
+          0.88,
+          0.78
+        ],
+        "secondary": [
+          0.55,
+          0.12,
+          0.18
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/b24b7d82828478/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "generator": "solid"
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/color-d60cf4127bcea3@1",
+      "name": "Solid Gold",
+      "description": "Reusable albedo only; does not set surface roughness, normals or lighting.",
+      "tags": [
+        "solid",
+        "palette"
+      ],
+      "parameters": {
+        "primary": [
+          0.7,
+          0.43,
+          0.13
+        ],
+        "secondary": [
+          0.55,
+          0.12,
+          0.18
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/d60cf4127bcea3/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "generator": "solid"
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/palette-4d1e8789be93c7@1",
+      "name": "Rose 2",
+      "description": "Shared solid palette Color.",
+      "tags": [
+        "palette",
+        "solid"
+      ],
+      "generator": "solid",
+      "parameters": {
+        "primary": [
+          0.63,
+          0.12,
+          0.25
+        ],
+        "secondary": [
+          0.63,
+          0.12,
+          0.25
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/palette-4d1e8789be93c7/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json"
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/palette-c5345beaaa1071@1",
+      "name": "Bright Gold",
+      "description": "Bright golden-yellow pigment, including the existing scalloped vanity mirror metal tint. No surface response is encoded in this Color.",
+      "tags": [
+        "palette",
+        "solid"
+      ],
+      "generator": "solid",
+      "parameters": {
+        "primary": [
+          0.98,
+          0.7,
+          0.1
+        ],
+        "secondary": [
+          0.98,
+          0.7,
+          0.1
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/palette-c5345beaaa1071/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json"
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/color-4492452086e893@1",
+      "name": "Solid Black",
+      "description": "Reusable albedo only; does not set surface roughness, normals or lighting.",
+      "tags": [
+        "solid",
+        "palette"
+      ],
+      "parameters": {
+        "primary": [
+          0.015,
+          0.011,
+          0.017
+        ],
+        "secondary": [
+          0.55,
+          0.12,
+          0.18
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/4492452086e893/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "generator": "solid"
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/color-086d55461ff86a@1",
+      "name": "Solid Blue",
+      "description": "Reusable albedo only; does not set surface roughness, normals or lighting.",
+      "tags": [
+        "solid",
+        "palette"
+      ],
+      "parameters": {
+        "primary": [
+          0.2,
+          0.36,
+          0.59
+        ],
+        "secondary": [
+          0.55,
+          0.12,
+          0.18
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/086d55461ff86a/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "generator": "solid"
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/palette-0360e04213f56b@1",
+      "name": "Rose 1",
+      "description": "Shared solid palette Color.",
+      "tags": [
+        "palette",
+        "solid"
+      ],
+      "generator": "solid",
+      "parameters": {
+        "primary": [
+          0.66,
+          0.009,
+          0.026
+        ],
+        "secondary": [
+          0.66,
+          0.009,
+          0.026
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/palette-0360e04213f56b/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json"
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/palette-625e5cd9485082@1",
+      "name": "Pale Orange 1",
+      "description": "Shared solid palette Color.",
+      "tags": [
+        "palette",
+        "solid"
+      ],
+      "generator": "solid",
+      "parameters": {
+        "primary": [
+          0.92,
+          0.8,
+          0.64
+        ],
+        "secondary": [
+          0.92,
+          0.8,
+          0.64
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/palette-625e5cd9485082/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json"
     }
   ],
   "textures": [],
   "defaultSuite": "materials/ymir-surfaces-v1/suite.json",
-  "aliases": {
-    "props/ivory-manicure-lacquer-c4e1c714a4/asset.json": {
-      "target": "props/lacquer-bottle/asset.json",
-      "variant": "variant-1",
-      "assetId": "grwm/lacquer-bottle@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    "props/liner-lacquer-191c53ecc2/asset.json": {
-      "target": "props/lacquer-bottle/asset.json",
-      "variant": "variant-2",
-      "assetId": "grwm/lacquer-bottle@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    "props/lacquer-bottle-0-c62f9048af/asset.json": {
-      "target": "props/lacquer-bottle/asset.json",
-      "variant": "variant-3",
-      "assetId": "grwm/lacquer-bottle@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    "props/lacquer-bottle-1-05fb28aa11/asset.json": {
-      "target": "props/lacquer-bottle/asset.json",
-      "variant": "variant-4",
-      "assetId": "grwm/lacquer-bottle@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    "props/lacquer-bottle-2-634474dab3/asset.json": {
-      "target": "props/lacquer-bottle/asset.json",
-      "variant": "variant-5",
-      "assetId": "grwm/lacquer-bottle@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    "props/gown-perfume-bottle-631232af1a/asset.json": {
-      "target": "props/lacquer-bottle/asset.json",
-      "variant": "variant-6",
-      "assetId": "grwm/lacquer-bottle@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    "props/hato-ornament-4288625920/asset.json": {
-      "target": "props/faceted-crystal/asset.json",
-      "variant": "variant-1",
-      "assetId": "grwm/faceted-crystal@1",
-      "nodeOrder": [
-        0
-      ]
-    },
-    "props/perccow-ornament-7e99b3d889/asset.json": {
-      "target": "props/faceted-crystal/asset.json",
-      "variant": "variant-2",
-      "assetId": "grwm/faceted-crystal@1",
-      "nodeOrder": [
-        0
-      ]
-    },
-    "props/vintage-curler-0-5d849704af/asset.json": {
-      "target": "props/hair-roller/asset.json",
-      "variant": "variant-1",
-      "assetId": "grwm/hair-roller@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "props/vintage-curler-1-1d50f8b329/asset.json": {
-      "target": "props/hair-roller/asset.json",
-      "variant": "variant-2",
-      "assetId": "grwm/hair-roller@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "props/vintage-curler-2-12868a8076/asset.json": {
-      "target": "props/hair-roller/asset.json",
-      "variant": "variant-3",
-      "assetId": "grwm/hair-roller@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "props/beauty-gift-0-e1dd3cec79/asset.json": {
-      "target": "props/gift-case/asset.json",
-      "variant": "variant-1",
-      "assetId": "grwm/gift-case@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ]
-    },
-    "props/beauty-gift-1-4c94d8316d/asset.json": {
-      "target": "props/gift-case/asset.json",
-      "variant": "variant-2",
-      "assetId": "grwm/gift-case@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ]
-    },
-    "props/backdrop-silk-55c7f36763-v4/asset.json": {
-      "target": "props/silk-curtains/asset.json",
-      "variant": "variant-1",
-      "assetId": "grwm/silk-curtains@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28
-      ]
-    },
-    "props/backdrop-silk-1ad49f311a-v4/asset.json": {
-      "target": "props/silk-curtains/asset.json",
-      "variant": "variant-2",
-      "assetId": "grwm/silk-curtains@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28
-      ]
-    },
-    "props/lipstick-beside-vanity-ef62b5880f-v4/asset.json": {
-      "target": "props/gold-lipstick/asset.json",
-      "variant": "variant-1",
-      "assetId": "grwm/gold-lipstick@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "props/finishing-lipstick-117d414430-v4/asset.json": {
-      "target": "props/gold-lipstick/asset.json",
-      "variant": "variant-2",
-      "assetId": "grwm/gold-lipstick@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "props/perfume-companion-compact-8fbcdabc98-v4/asset.json": {
-      "target": "props/hinged-compact/asset.json",
-      "variant": "variant-1",
-      "assetId": "grwm/hinged-compact@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    "props/travel-compact-371e5fa145-v4/asset.json": {
-      "target": "props/hinged-compact/asset.json",
-      "variant": "variant-2",
-      "assetId": "grwm/hinged-compact@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    "props/eye-shadow-compact-25dfd9a6d8-v4/asset.json": {
-      "target": "props/hinged-compact/asset.json",
-      "variant": "variant-3",
-      "assetId": "grwm/hinged-compact@1",
-      "nodeOrder": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    }
-  },
+  "aliases": {},
   "colorGenerators": "colors/generators.glsl"
 }

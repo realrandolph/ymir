@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/reflective-surface@3",
+  "name": "Mirror Glass",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 3,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.35,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Highly reflective glass surface with softened environment reflections.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}

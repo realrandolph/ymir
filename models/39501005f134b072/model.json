@@ -1,19 +1,19 @@
 {
   "schemaVersion": 2,
   "type": "model",
-  "id": "ymir/model-ba57602d3d1f608c@1",
-  "name": "Mounted Faceted Crystal",
+  "id": "ymir/model-39501005f134b072@1",
+  "name": "Velvet-Lined Accessory Tray",
   "description": "",
   "tags": [],
   "mesh": "mesh.bin",
-  "meshSha256": "9aa978caa09ea6135635b0f46be364bd498666a816879b0080c30d1bbeee4f4a",
+  "meshSha256": "95039b2fbb5848e77a4ef67a0944229cec84e93b659ba24ffdde422b990b4a78",
   "parts": [
     {
       "id": "part-1",
       "vertex_offset": 0,
-      "index_offset": 18496,
-      "vertex_count": 578,
-      "index_count": 3456,
+      "index_offset": 49152,
+      "vertex_count": 1536,
+      "index_count": 8100,
       "pos": [
         0,
         0,
@@ -30,18 +30,18 @@
         1
       ],
       "joint": null,
-      "name": "Flat-Bottomed Gold Crystal Setting",
+      "name": "Grounded Accessory Tray Frame",
       "slotId": "surface-1"
     },
     {
       "id": "part-2",
-      "vertex_offset": 32320,
-      "index_offset": 35392,
-      "vertex_count": 96,
-      "index_count": 96,
+      "vertex_offset": 81552,
+      "index_offset": 130704,
+      "vertex_count": 1536,
+      "index_count": 8100,
       "pos": [
         0,
-        0.077,
+        0.035,
         0
       ],
       "rot": [
@@ -55,34 +55,34 @@
         1
       ],
       "joint": null,
-      "name": "Supported Faceted Vanity Crystal",
+      "name": "Fitted Rose Velvet Accessory Insert",
       "slotId": "surface-2"
     }
   ],
   "license": "Unverified project provenance; see provenance-v4.json.",
   "bounds": [
     [
-      -0.0729999989271164,
-      0.0,
-      -0.0729999989271164
+      -0.739955723285675,
+      -0.019999999552965164,
+      -0.44995570182800293
     ],
     [
-      0.0729999989271164,
-      0.09939999878406525,
-      0.0729999989271164
+      0.739955723285675,
+      0.04749999940395355,
+      0.44995570182800293
     ]
   ],
   "slots": [
     {
       "id": "surface-1",
-      "name": "Flat-Bottomed Gold Crystal Setting",
+      "name": "Grounded Accessory Tray Frame",
       "partIds": [
         "part-1"
       ]
     },
     {
       "id": "surface-2",
-      "name": "Supported Faceted Vanity Crystal",
+      "name": "Fitted Rose Velvet Accessory Insert",
       "partIds": [
         "part-2"
       ]

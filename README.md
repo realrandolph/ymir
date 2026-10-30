@@ -5,9 +5,12 @@ Props, Materials, and named Colors. Its local editor writes catalog metadata.
 Trinity supplies the built WebGL renderer; Ymir does not depend on Synesthesia.
 
 The public repository and [GitHub Pages demo](https://realrandolph.github.io/ymir/)
-contain the application, renderer resources, and the five smallest Model examples
-by combined manifest and mesh size. The full working library remains outside this
-repository. The Pages demo is read-only; the local app enables the editors.
+contain the application, renderer resources, and five compact, distinct Props:
+Faceted Accent Crystal, Curved Gold Hair Clip, Nail Polish Applicator, Gift Silk
+Ribbon, and Velvet-Lined Accessory Tray. Their required Models, Materials, and
+Colors are included so the demo renders each Prop's authored appearance. The full
+working library remains outside this repository. Pages is read-only; the local app
+enables the editors.
 
 ## Run locally
 
@@ -26,8 +29,8 @@ for previews. Browser QA scripts use Ymir-local Playwright and Vite dependencies
 ## Layout
 
 - `catalog.json`: searchable manifest index with stable, versioned IDs.
-- `models/`: shared geometry manifests and mesh buffers. The public repository
-  includes five small examples; other projects can supply their own Ymir library.
+- `props/` and `models/`: five featured Prop examples and their shared geometry.
+  Other projects can supply their own Ymir library.
 - `materials/`, `colors/`, and `effects/`: shader-suite resources for Trinity.
 - `browser/`, `tools/`, and `test/`: viewer/editor, localhost server, and tests.
 

@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 3,
+  "id": "grwm/floating-polish-applicator-dd40c98553@1",
+  "version": 1,
+  "type": "prop",
+  "name": "Nail Polish Applicator",
+  "bounds": [
+    [
+      -0.15000000596046448,
+      -0.8403612375259399,
+      -0.15000000596046448
+    ],
+    [
+      0.15000000596046448,
+      0.38999998569488525,
+      0.15000000596046448
+    ]
+  ],
+  "sourceScene": 2,
+  "reviewStatus": "work-in-progress",
+  "license": "Unverified project provenance; see provenance.json.",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "materialUpgrade": "v4; original v3 geometry retained",
+  "description": "",
+  "tags": [],
+  "parts": [
+    {
+      "partId": "part-1",
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "deformability": 0,
+      "label": "polish brush cap",
+      "joint": null,
+      "surface_center": [
+        0.0,
+        0.19499999284744263,
+        0.0
+      ],
+      "surface_normal": [
+        -6.285282552198623e-07,
+        1.0,
+        -5.5307777984126005e-06
+      ],
+      "glint_anchors": []
+    },
+    {
+      "partId": "part-2",
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "deformability": 0,
+      "label": "attached applicator shaft",
+      "joint": null,
+      "surface_center": [
+        0.0,
+        -0.30000001192092896,
+        0.0
+      ],
+      "surface_normal": [
+        0.18392018973827362,
+        0.18392018973827362,
+        -0.9655810594558716
+      ],
+      "glint_anchors": []
+    },
+    {
+      "partId": "part-3",
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "deformability": 0,
+      "label": "lacquer-wet brush bristles",
+      "joint": null,
+      "surface_center": [
+        0.0,
+        -0.7350965142250061,
+        0.006243125069886446
+      ],
+      "surface_normal": [
+        -0.32789915800094604,
+        0.06148109212517738,
+        -0.9427100419998169
+      ],
+      "glint_anchors": []
+    }
+  ],
+  "modelId": "ymir/model-60b00e9a58b9c179@1",
+  "model": "models/60b00e9a58b9c179/model.json",
+  "variants": [
+    {
+      "id": "default",
+      "name": "Original Finish",
+      "description": "",
+      "tags": [],
+      "slots": [],
+      "partMetadata": [
+        {
+          "partId": "part-1"
+        },
+        {
+          "partId": "part-2"
+        },
+        {
+          "partId": "part-3"
+        }
+      ]
+    }
+  ],
+  "defaultVariant": "default",
+  "slots": [
+    {
+      "slotId": "surface-1",
+      "material": {
+        "id": "grwm/studio-surface@3",
+        "parameters": {
+          "rough": 0.31,
+          "metal": 0.01,
+          "gold_finish": false
+        }
+      },
+      "color": {
+        "id": "ymir/color-4492452086e893@1"
+      }
+    },
+    {
+      "slotId": "surface-2",
+      "material": {
+        "id": "grwm/studio-surface@3",
+        "parameters": {
+          "rough": 0.39,
+          "metal": 0,
+          "gold_finish": false
+        }
+      },
+      "color": {
+        "id": "ymir/palette-625e5cd9485082@1"
+      }
+    },
+    {
+      "slotId": "surface-3",
+      "material": {
+        "id": "grwm/studio-surface@3",
+        "parameters": {
+          "rough": 0.26,
+          "metal": 0,
+          "gold_finish": false
+        }
+      },
+      "color": {
+        "id": "ymir/palette-0360e04213f56b@1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "type": "model",
+  "id": "ymir/model-76d7f6bdae9c766c@1",
+  "name": "Polished Hairpin",
+  "description": "",
+  "tags": [],
+  "mesh": "mesh.bin",
+  "meshSha256": "dbc268006e9c0c722e5e3ec4216256d1e76a4f8ffc7dd869d09f474add7670db",
+  "parts": [
+    {
+      "id": "part-1",
+      "vertex_offset": 0,
+      "index_offset": 9472,
+      "vertex_count": 296,
+      "index_count": 1728,
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Small Polished Hairpin",
+      "slotId": "surface-1"
+    }
+  ],
+  "license": "Unverified project provenance; see provenance.json.",
+  "bounds": [
+    [
+      -0.07488448172807693,
+      -0.1031845360994339,
+      -0.012000000104308128
+    ],
+    [
+      0.07488448172807693,
+      0.08449999988079071,
+      0.012000000104308128
+    ]
+  ],
+  "slots": [
+    {
+      "id": "surface-1",
+      "name": "Small Polished Hairpin",
+      "partIds": [
+        "part-1"
+      ]
+    }
+  ]
+}

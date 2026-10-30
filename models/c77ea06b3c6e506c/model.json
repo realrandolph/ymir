@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "type": "model",
+  "id": "ymir/model-c77ea06b3c6e506c@1",
+  "name": "Curved Gold Hair Clip",
+  "description": "",
+  "tags": [],
+  "mesh": "mesh.bin",
+  "meshSha256": "76131dec20ccc2326e1e3d47a7b26b400ae7b016be4a22d8000952db95a38de6",
+  "parts": [
+    {
+      "id": "part-1",
+      "vertex_offset": 0,
+      "index_offset": 37248,
+      "vertex_count": 1164,
+      "index_count": 6912,
+      "pos": [
+        0,
+        0.013,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Staged Curved Gold Vanity Clip",
+      "slotId": "surface-1"
+    }
+  ],
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "bounds": [
+    [
+      -0.09710408002138138,
+      0.000850000127684325,
+      -0.13842128217220306
+    ],
+    [
+      0.09710408002138138,
+      0.0251499991863966,
+      0.11002500355243683
+    ]
+  ],
+  "slots": [
+    {
+      "id": "surface-1",
+      "name": "Staged Curved Gold Vanity Clip",
+      "partIds": [
+        "part-1"
+      ]
+    }
+  ]
+}

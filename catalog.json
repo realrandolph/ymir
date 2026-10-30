@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "version": "0.7.0",
+  "assets": [
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-31787465f69ace95@1",
+      "name": "Faceted Accent Crystal",
+      "description": "",
+      "tags": [],
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "models/31787465f69ace95/model.json",
+      "partCount": 1,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Mounted Accent Crystal",
+          "partIds": [
+            "part-1"
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-76d7f6bdae9c766c@1",
+      "name": "Polished Hairpin",
+      "description": "",
+      "tags": [],
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "models/76d7f6bdae9c766c/model.json",
+      "partCount": 1,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Small Polished Hairpin",
+          "partIds": [
+            "part-1"
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-ba57602d3d1f608c@1",
+      "name": "Mounted Faceted Crystal",
+      "description": "",
+      "tags": [],
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "models/ba57602d3d1f608c/model.json",
+      "partCount": 2,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Flat-Bottomed Gold Crystal Setting",
+          "partIds": [
+            "part-1"
+          ]
+        },
+        {
+          "id": "surface-2",
+          "name": "Supported Faceted Vanity Crystal",
+          "partIds": [
+            "part-2"
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-c77ea06b3c6e506c@1",
+      "name": "Curved Gold Hair Clip",
+      "description": "",
+      "tags": [],
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "models/c77ea06b3c6e506c/model.json",
+      "partCount": 1,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Staged Curved Gold Vanity Clip",
+          "partIds": [
+            "part-1"
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-60b00e9a58b9c179@1",
+      "name": "Nail Polish Applicator",
+      "description": "",
+      "tags": [],
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "models/60b00e9a58b9c179/model.json",
+      "partCount": 3,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Polish Brush Cap",
+          "partIds": [
+            "part-1"
+          ]
+        },
+        {
+          "id": "surface-2",
+          "name": "Attached Applicator Shaft",
+          "partIds": [
+            "part-2"
+          ]
+        },
+        {
+          "id": "surface-3",
+          "name": "Lacquer-Wet Brush Bristles",
+          "partIds": [
+            "part-3"
+          ]
+        }
+      ]
+    }
+  ],
+  "textures": [],
+  "defaultSuite": "materials/ymir-surfaces-v1/suite.json",
+  "aliases": {
+    "props/ivory-manicure-lacquer-c4e1c714a4/asset.json": {
+      "target": "props/lacquer-bottle/asset.json",
+      "variant": "variant-1",
+      "assetId": "grwm/lacquer-bottle@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "props/liner-lacquer-191c53ecc2/asset.json": {
+      "target": "props/lacquer-bottle/asset.json",
+      "variant": "variant-2",
+      "assetId": "grwm/lacquer-bottle@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "props/lacquer-bottle-0-c62f9048af/asset.json": {
+      "target": "props/lacquer-bottle/asset.json",
+      "variant": "variant-3",
+      "assetId": "grwm/lacquer-bottle@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "props/lacquer-bottle-1-05fb28aa11/asset.json": {
+      "target": "props/lacquer-bottle/asset.json",
+      "variant": "variant-4",
+      "assetId": "grwm/lacquer-bottle@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "props/lacquer-bottle-2-634474dab3/asset.json": {
+      "target": "props/lacquer-bottle/asset.json",
+      "variant": "variant-5",
+      "assetId": "grwm/lacquer-bottle@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "props/gown-perfume-bottle-631232af1a/asset.json": {
+      "target": "props/lacquer-bottle/asset.json",
+      "variant": "variant-6",
+      "assetId": "grwm/lacquer-bottle@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "props/hato-ornament-4288625920/asset.json": {
+      "target": "props/faceted-crystal/asset.json",
+      "variant": "variant-1",
+      "assetId": "grwm/faceted-crystal@1",
+      "nodeOrder": [
+        0
+      ]
+    },
+    "props/perccow-ornament-7e99b3d889/asset.json": {
+      "target": "props/faceted-crystal/asset.json",
+      "variant": "variant-2",
+      "assetId": "grwm/faceted-crystal@1",
+      "nodeOrder": [
+        0
+      ]
+    },
+    "props/vintage-curler-0-5d849704af/asset.json": {
+      "target": "props/hair-roller/asset.json",
+      "variant": "variant-1",
+      "assetId": "grwm/hair-roller@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "props/vintage-curler-1-1d50f8b329/asset.json": {
+      "target": "props/hair-roller/asset.json",
+      "variant": "variant-2",
+      "assetId": "grwm/hair-roller@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "props/vintage-curler-2-12868a8076/asset.json": {
+      "target": "props/hair-roller/asset.json",
+      "variant": "variant-3",
+      "assetId": "grwm/hair-roller@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "props/beauty-gift-0-e1dd3cec79/asset.json": {
+      "target": "props/gift-case/asset.json",
+      "variant": "variant-1",
+      "assetId": "grwm/gift-case@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "props/beauty-gift-1-4c94d8316d/asset.json": {
+      "target": "props/gift-case/asset.json",
+      "variant": "variant-2",
+      "assetId": "grwm/gift-case@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "props/backdrop-silk-55c7f36763-v4/asset.json": {
+      "target": "props/silk-curtains/asset.json",
+      "variant": "variant-1",
+      "assetId": "grwm/silk-curtains@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    "props/backdrop-silk-1ad49f311a-v4/asset.json": {
+      "target": "props/silk-curtains/asset.json",
+      "variant": "variant-2",
+      "assetId": "grwm/silk-curtains@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    "props/lipstick-beside-vanity-ef62b5880f-v4/asset.json": {
+      "target": "props/gold-lipstick/asset.json",
+      "variant": "variant-1",
+      "assetId": "grwm/gold-lipstick@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "props/finishing-lipstick-117d414430-v4/asset.json": {
+      "target": "props/gold-lipstick/asset.json",
+      "variant": "variant-2",
+      "assetId": "grwm/gold-lipstick@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "props/perfume-companion-compact-8fbcdabc98-v4/asset.json": {
+      "target": "props/hinged-compact/asset.json",
+      "variant": "variant-1",
+      "assetId": "grwm/hinged-compact@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "props/travel-compact-371e5fa145-v4/asset.json": {
+      "target": "props/hinged-compact/asset.json",
+      "variant": "variant-2",
+      "assetId": "grwm/hinged-compact@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "props/eye-shadow-compact-25dfd9a6d8-v4/asset.json": {
+      "target": "props/hinged-compact/asset.json",
+      "variant": "variant-3",
+      "assetId": "grwm/hinged-compact@1",
+      "nodeOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "colorGenerators": "colors/generators.glsl"
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "type": "model",
+  "id": "ymir/model-60b00e9a58b9c179@1",
+  "name": "Nail Polish Applicator",
+  "description": "",
+  "tags": [],
+  "mesh": "mesh.bin",
+  "meshSha256": "5835129024219efe37fd4be7dfdd2f959e5300c1cf6d706342aede4495d13fa0",
+  "parts": [
+    {
+      "id": "part-1",
+      "vertex_offset": 0,
+      "index_offset": 12352,
+      "vertex_count": 386,
+      "index_count": 2304,
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Polish Brush Cap",
+      "slotId": "surface-1"
+    },
+    {
+      "id": "part-2",
+      "vertex_offset": 21568,
+      "index_offset": 24704,
+      "vertex_count": 98,
+      "index_count": 576,
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Attached Applicator Shaft",
+      "slotId": "surface-2"
+    },
+    {
+      "id": "part-3",
+      "vertex_offset": 27008,
+      "index_offset": 64448,
+      "vertex_count": 1170,
+      "index_count": 6480,
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Lacquer-Wet Brush Bristles",
+      "slotId": "surface-3"
+    }
+  ],
+  "license": "Unverified project provenance; see provenance.json.",
+  "bounds": [
+    [
+      -0.15000000596046448,
+      -0.8403612375259399,
+      -0.15000000596046448
+    ],
+    [
+      0.15000000596046448,
+      0.38999998569488525,
+      0.15000000596046448
+    ]
+  ],
+  "slots": [
+    {
+      "id": "surface-1",
+      "name": "Polish Brush Cap",
+      "partIds": [
+        "part-1"
+      ]
+    },
+    {
+      "id": "surface-2",
+      "name": "Attached Applicator Shaft",
+      "partIds": [
+        "part-2"
+      ]
+    },
+    {
+      "id": "surface-3",
+      "name": "Lacquer-Wet Brush Bristles",
+      "partIds": [
+        "part-3"
+      ]
+    }
+  ]
+}

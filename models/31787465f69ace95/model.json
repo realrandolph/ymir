@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "type": "model",
+  "id": "ymir/model-31787465f69ace95@1",
+  "name": "Faceted Accent Crystal",
+  "description": "",
+  "tags": [],
+  "mesh": "mesh.bin",
+  "meshSha256": "89db6fa54771ee3b33f48febaa3646f5f0cc15caec211c65b477429bbc1f50b9",
+  "parts": [
+    {
+      "id": "part-1",
+      "vertex_offset": 0,
+      "index_offset": 3072,
+      "vertex_count": 96,
+      "index_count": 96,
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Mounted Accent Crystal",
+      "slotId": "surface-1"
+    }
+  ],
+  "license": "Unverified project provenance; see provenance.json.",
+  "bounds": [
+    [
+      -0.034645482897758484,
+      -0.03449999913573265,
+      -0.034645482897758484
+    ],
+    [
+      0.034645482897758484,
+      0.012000000104308128,
+      0.034645482897758484
+    ]
+  ],
+  "slots": [
+    {
+      "id": "surface-1",
+      "name": "Mounted Accent Crystal",
+      "partIds": [
+        "part-1"
+      ]
+    }
+  ]
+}

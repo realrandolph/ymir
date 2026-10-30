@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "type": "model",
+  "id": "ymir/model-ba57602d3d1f608c@1",
+  "name": "Mounted Faceted Crystal",
+  "description": "",
+  "tags": [],
+  "mesh": "mesh.bin",
+  "meshSha256": "9aa978caa09ea6135635b0f46be364bd498666a816879b0080c30d1bbeee4f4a",
+  "parts": [
+    {
+      "id": "part-1",
+      "vertex_offset": 0,
+      "index_offset": 18496,
+      "vertex_count": 578,
+      "index_count": 3456,
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Flat-Bottomed Gold Crystal Setting",
+      "slotId": "surface-1"
+    },
+    {
+      "id": "part-2",
+      "vertex_offset": 32320,
+      "index_offset": 35392,
+      "vertex_count": 96,
+      "index_count": 96,
+      "pos": [
+        0,
+        0.077,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Supported Faceted Vanity Crystal",
+      "slotId": "surface-2"
+    }
+  ],
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "bounds": [
+    [
+      -0.0729999989271164,
+      0.0,
+      -0.0729999989271164
+    ],
+    [
+      0.0729999989271164,
+      0.09939999878406525,
+      0.0729999989271164
+    ]
+  ],
+  "slots": [
+    {
+      "id": "surface-1",
+      "name": "Flat-Bottomed Gold Crystal Setting",
+      "partIds": [
+        "part-1"
+      ]
+    },
+    {
+      "id": "surface-2",
+      "name": "Supported Faceted Vanity Crystal",
+      "partIds": [
+        "part-2"
+      ]
+    }
+  ]
+}

@@ -7,7 +7,7 @@ const site = path.join(root, 'site');
 const catalog = JSON.parse(await readFile(path.join(root, 'catalog.json'), 'utf8'));
 const featuredPropIds = [
   'grwm/faceted-crystal@1',
-  'grwm/hatc-gold-clip-dc7c5a60a1@2',
+  'grwm/hatc-gold-clip-dc7c5a60a1@3',
   'grwm/floating-polish-applicator-dd40c98553@1',
   'grwm/gift-connecting-silk-881b1bf633@1',
   'grwm/velvet-accessory-tray-668382bd90@2',

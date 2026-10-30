@@ -6,11 +6,11 @@ Trinity supplies the built WebGL renderer; Ymir does not depend on Synesthesia.
 
 The public repository and [GitHub Pages demo](https://realrandolph.github.io/ymir/)
 contain the application, renderer resources, and five compact, distinct Props:
-Faceted Accent Crystal, Curved Gold Hair Clip, Nail Polish Applicator, Gift Silk
-Ribbon, and Velvet-Lined Accessory Tray. Their required Models, Materials, and
-Colors are included so the demo renders each Prop's authored appearance. The full
-working library remains outside this repository. Pages is read-only; the local app
-enables the editors.
+Faceted Accent Crystal, Curved Gold Hinged Barrette, Nail Polish Applicator, Gift
+Silk Ribbon, and Velvet-Lined Accessory Tray. The barrette offers Gold, Silver, and
+Tortoise Shell appearances. Required Models, Materials, and Colors are included so
+the demo renders each Prop's authored appearance. The full working library remains
+outside this repository. Pages is read-only; the local app enables the editors.
 
 ## Run locally
 

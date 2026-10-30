@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "type": "model",
+  "id": "ymir/model-9665f73478184407@1",
+  "name": "Curved Gold Hinged Barrette",
+  "description": "Closed-state barrette with a flattened, capped curved shell, hinged spring arm, hinge pin, and receiving catch.",
+  "tags": [
+    "hair accessory",
+    "hinged barrette"
+  ],
+  "mesh": "mesh.bin",
+  "meshSha256": "9665f7347818440726f2b05bca86994389e64ab45038fbedf04ac10d13629df3",
+  "parts": [
+    {
+      "id": "part-1",
+      "name": "Curved gold shell",
+      "vertex_offset": 0,
+      "index_offset": 38080,
+      "vertex_count": 1190,
+      "index_count": 6984,
+      "pos": [
+        0,
+        0.013,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "slotId": "surface-1"
+    },
+    {
+      "id": "part-2",
+      "name": "Hinged spring arm",
+      "vertex_offset": 66016,
+      "index_offset": 80608,
+      "vertex_count": 456,
+      "index_count": 2604,
+      "pos": [
+        0,
+        0.013,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "slotId": "surface-2"
+    },
+    {
+      "id": "part-3",
+      "name": "Hinge and receiving catch",
+      "vertex_offset": 91024,
+      "index_offset": 97104,
+      "vertex_count": 190,
+      "index_count": 672,
+      "pos": [
+        0,
+        0.013,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "slotId": "surface-1"
+    }
+  ],
+  "bounds": [
+    [
+      -0.09710408002138138,
+      -0.007000000000000001,
+      -0.141
+    ],
+    [
+      0.09710408002138138,
+      0.01968249991722405,
+      0.11002500355243683
+    ]
+  ],
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "slots": [
+    {
+      "id": "surface-1",
+      "name": "Curved shell and hinge hardware",
+      "partIds": [
+        "part-1",
+        "part-3"
+      ]
+    },
+    {
+      "id": "surface-2",
+      "name": "Spring arm",
+      "partIds": [
+        "part-2"
+      ]
+    }
+  ]
+}

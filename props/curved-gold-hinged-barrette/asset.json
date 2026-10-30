@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 3,
+  "id": "grwm/hatc-gold-clip-dc7c5a60a1@3",
+  "version": 3,
+  "type": "prop",
+  "name": "Curved Gold Hinged Barrette",
+  "bounds": [
+    [
+      -0.09710408002138138,
+      -0.007000000000000001,
+      -0.141
+    ],
+    [
+      0.09710408002138138,
+      0.01968249991722405,
+      0.11002500355243683
+    ]
+  ],
+  "sourceScene": 1,
+  "sourceVersion": "ymir-hinged-v1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "reviewStatus": "work-in-progress",
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Closed-state hinged barrette with a capped curved shell, spring arm, hinge pin, and catch.",
+  "tags": [],
+  "parts": [
+    {
+      "partId": "part-1",
+      "pos": [
+        0,
+        0.013,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "deformability": 0,
+      "label": "closed curved gold shell",
+      "joint": null,
+      "surface_center": [
+        0.0,
+        0.0,
+        -0.014198139309883118
+      ],
+      "surface_normal": [
+        -0.15362021327018738,
+        0.051206741482019424,
+        0.43525728583335876
+      ],
+      "glint_anchors": [
+        {
+          "point": [
+            -0.03427610173821449,
+            8.1124737687597e-18,
+            0.10418675094842911
+          ],
+          "normal": [
+            -0.4291858375072479,
+            1.7777073540253086e-16,
+            0.9032161831855774
+          ]
+        },
+        {
+          "point": [
+            0.029431987553834915,
+            0.007075000088661909,
+            0.10425808280706406
+          ],
+          "normal": [
+            0.3289695084095001,
+            0.5,
+            0.8011111617088318
+          ]
+        },
+        {
+          "point": [
+            -0.01585884764790535,
+            0.0122542604804039,
+            0.10315512865781784
+          ],
+          "normal": [
+            -0.1113530620932579,
+            0.8660253882408142,
+            0.48744282126426697
+          ]
+        }
+      ]
+    },
+    {
+      "partId": "part-2",
+      "pos": [
+        0,
+        0.013,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "deformability": 0,
+      "label": "hinged spring arm",
+      "joint": null,
+      "surface_center": [
+        0,
+        -0.0135,
+        -0.128
+      ],
+      "surface_normal": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "partId": "part-3",
+      "pos": [
+        0,
+        0.013,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "deformability": 0,
+      "label": "hinge pin and receiving catch",
+      "joint": null,
+      "surface_center": [
+        0,
+        -0.01,
+        -0.135
+      ],
+      "surface_normal": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "modelId": "ymir/model-9665f73478184407@1",
+  "model": "models/9665f73478184407/model.json",
+  "variants": [
+    {
+      "id": "gold",
+      "name": "Gold",
+      "description": "Gold shell and matching spring hardware.",
+      "tags": [],
+      "slots": [],
+      "partMetadata": [
+        {
+          "partId": "part-1"
+        },
+        {
+          "partId": "part-2"
+        },
+        {
+          "partId": "part-3"
+        }
+      ]
+    },
+    {
+      "id": "silver",
+      "name": "Silver",
+      "description": "Cool silver shell and spring hardware.",
+      "tags": [],
+      "slots": [
+        {
+          "slotId": "surface-1",
+          "material": {
+            "id": "grwm/studio-surface@3",
+            "parameters": {
+              "rough": 0.31,
+              "metal": 0.96,
+              "gold_finish": false,
+              "matte_support": false
+            }
+          },
+          "color": {
+            "id": "ymir/palette-7aad1b191a8b0d@1"
+          }
+        },
+        {
+          "slotId": "surface-2",
+          "material": {
+            "id": "grwm/brushed-gold@3",
+            "parameters": {
+              "rough": 0.35,
+              "metal": 0.96,
+              "gold_finish": false,
+              "matte_support": false
+            }
+          },
+          "color": {
+            "id": "ymir/palette-7aad1b191a8b0d@1"
+          }
+        }
+      ],
+      "partMetadata": [
+        {
+          "partId": "part-1"
+        },
+        {
+          "partId": "part-2"
+        },
+        {
+          "partId": "part-3"
+        }
+      ]
+    },
+    {
+      "id": "tortoise-shell",
+      "name": "Tortoise Shell",
+      "description": "Amber and dark-brown marbled shell with gold spring hardware.",
+      "tags": [],
+      "slots": [
+        {
+          "slotId": "surface-1",
+          "material": {
+            "id": "grwm/studio-surface@3",
+            "parameters": {
+              "rough": 0.3,
+              "metal": 0.08,
+              "gold_finish": false,
+              "matte_support": false
+            }
+          },
+          "color": {
+            "id": "ymir/color-8ef8afeda40127@1"
+          }
+        }
+      ],
+      "partMetadata": [
+        {
+          "partId": "part-1"
+        },
+        {
+          "partId": "part-2"
+        },
+        {
+          "partId": "part-3"
+        }
+      ]
+    }
+  ],
+  "defaultVariant": "gold",
+  "slots": [
+    {
+      "slotId": "surface-1",
+      "material": {
+        "id": "grwm/studio-surface@3",
+        "parameters": {
+          "rough": 0.31,
+          "metal": 0.96,
+          "gold_finish": true,
+          "matte_support": false
+        }
+      },
+      "color": {
+        "id": "ymir/palette-c5345beaaa1071@1"
+      }
+    },
+    {
+      "slotId": "surface-2",
+      "material": {
+        "id": "grwm/brushed-gold@3",
+        "parameters": {
+          "rough": 0.35,
+          "metal": 0.96,
+          "gold_finish": true,
+          "matte_support": false
+        }
+      },
+      "color": {
+        "id": "ymir/palette-c5345beaaa1071@1"
+      }
+    }
+  ]
+}

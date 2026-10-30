@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "type": "color",
+  "id": "ymir/color-8ef8afeda40127@1",
+  "name": "Tortoise Shell",
+  "description": "Amber and dark-brown procedural marbling for the shell variant.",
+  "tags": [
+    "pattern",
+    "tortoise"
+  ],
+  "generator": "marbling",
+  "parameters": {
+    "primary": [
+      0.16,
+      0.045,
+      0.012
+    ],
+    "secondary": [
+      0.58,
+      0.24,
+      0.055
+    ],
+    "pattern": 5,
+    "scale": [
+      1,
+      1
+    ],
+    "offset": [
+      0,
+      0
+    ]
+  },
+  "manifest": "colors/8ef8afeda40127/color.json",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json"
+}

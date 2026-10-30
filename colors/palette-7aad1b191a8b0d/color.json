@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "type": "color",
+  "id": "ymir/palette-7aad1b191a8b0d@1",
+  "name": "Silver",
+  "description": "Cool silver albedo for the hinged barrette variant.",
+  "tags": [
+    "palette",
+    "solid"
+  ],
+  "generator": "solid",
+  "parameters": {
+    "primary": [
+      0.74,
+      0.79,
+      0.84
+    ],
+    "secondary": [
+      0.74,
+      0.79,
+      0.84
+    ],
+    "pattern": -1,
+    "scale": [
+      1,
+      1
+    ],
+    "offset": [
+      0,
+      0
+    ]
+  },
+  "manifest": "colors/palette-7aad1b191a8b0d/color.json",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json"
+}

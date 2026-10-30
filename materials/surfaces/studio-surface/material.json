@@ -9,12 +9,12 @@
   "profile": 0,
   "sourceVersion": "v4",
   "parameters": {
-    "rough": 0.35,
+    "rough": 0.18,
     "metal": 0,
     "gold_finish": false,
     "matte_support": false
   },
   "license": "Unverified project provenance; see provenance-v4.json.",
-  "description": "Smooth micrograin finish with adjustable roughness and metalness. Existing slot overrides determine whether it represents polished metal, a satin metal finish, or a nonmetallic surface.",
+  "description": "Clean, polished dielectric surface with no added grain or relief. Roughness controls highlight width; slot overrides can reuse this smooth response for other finishes.",
   "defaultColorId": "ymir/color-d60cf4127bcea3@1"
 }

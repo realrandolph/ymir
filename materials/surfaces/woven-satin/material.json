@@ -9,12 +9,12 @@
   "profile": 1,
   "sourceVersion": "v4",
   "parameters": {
-    "rough": 0.35,
+    "rough": 0.3,
     "metal": 0,
     "gold_finish": false,
     "matte_support": false
   },
   "license": "Unverified project provenance; see provenance-v4.json.",
-  "description": "Surface response and microgeometry, independent of Color.",
+  "description": "Silk satin with a smooth lustrous face, a fine crossed warp/weft pattern, and a colored directional sheen. Color remains a separate named resource.",
   "defaultColorId": "ymir/color-d60cf4127bcea3@1"
 }

@@ -83,13 +83,25 @@ vec3 surfaceBump(vec3 n,float height){
     vec3 gradient=sign(determinant)*(dFdx(height)*r1+dFdy(height)*r2);
     return normalize(max(abs(determinant),1e-10)*n-gradient);
 }
-vec3 directBRDF(vec3 n,vec3 v,vec3 l,vec3 base,float rough,float metal){
+vec3 directBRDF(vec3 n,vec3 v,vec3 l,vec3 base,float rough,float metal,vec3 tangent){
     float nl=max(0.0,dot(n,l)),nv=max(.001,dot(n,v));if(nl<=0.0)return vec3(0);
     vec3 h=normalize(v+l);float nh=max(.001,dot(n,h)),vh=max(0.0,dot(v,h));
-    float a=max(.025,rough*rough),a2=a*a,denom=nh*nh*(a2-1.0)+1.0;
-    float distribution=a2/(3.14159265*denom*denom);
-    float k=(rough+1.0)*(rough+1.0)/8.0;
-    float geometry=(nv/(nv*(1.0-k)+k))*(nl/(nl*(1.0-k)+k));
+    float distribution,geometry;
+    if(material_kind>9.5 && material_kind<10.5){
+        vec3 t=normalize(tangent-n*dot(n,tangent)),b=normalize(cross(n,t));
+        float alphaT=max(.035,rough*rough*2.0),alphaB=max(.025,rough*rough*.42);
+        float ht=dot(h,t),hb=dot(h,b),denom=(ht/alphaT)*(ht/alphaT)+(hb/alphaB)*(hb/alphaB)+nh*nh;
+        distribution=1.0/(3.14159265*alphaT*alphaB*denom*denom);
+        float vtT=dot(v,t)*alphaT,vtB=dot(v,b)*alphaB,ltT=dot(l,t)*alphaT,ltB=dot(l,b)*alphaB;
+        float vt=sqrt(vtT*vtT+vtB*vtB)/nv,lt=sqrt(ltT*ltT+ltB*ltB)/nl;
+        float lambdaV=.5*(sqrt(1.0+vt*vt)-1.0),lambdaL=.5*(sqrt(1.0+lt*lt)-1.0);
+        geometry=1.0/(1.0+lambdaV+lambdaL);
+    }else{
+        float a=max(.025,rough*rough),a2=a*a,denom=nh*nh*(a2-1.0)+1.0;
+        distribution=a2/(3.14159265*denom*denom);
+        float k=(rough+1.0)*(rough+1.0)/8.0;
+        geometry=(nv/(nv*(1.0-k)+k))*(nl/(nl*(1.0-k)+k));
+    }
     // Gold-plated conductor reflectance keeps a warm grazing response instead
     // of the dielectric-like white edge that made the gold read as pale brass.
     vec3 f0=mix(vec3(.04),base,metal);
@@ -123,6 +135,9 @@ void main(){
     if(reflection_pass>0.5 && dot(vec4(world_pos,1.0),reflection_clip)<0.005)discard;
     vec3 n=normalize(world_normal);
     if(!gl_FrontFacing)n=-n;
+    vec3 tangentRaw=dFdx(world_pos)*dFdy(uv.y)-dFdy(world_pos)*dFdx(uv.y);
+    if(length(tangentRaw)<.000001)tangentRaw=cross(n,abs(n.y)<.9?vec3(0,1,0):vec3(1,0,0));
+    vec3 surfaceTangent=normalize(tangentRaw-n*dot(n,tangentRaw));
     vec3 v=normalize(camera_position-world_pos);
     vec3 l=normalize(light_position-world_pos);
     vec3 h=normalize(v+l);
@@ -132,11 +147,18 @@ void main(){
     float micro=hash(floor(original_pos*240.0));
     float grain=(micro-.5)*.045;
     grain*=1.0-smoothstep(.3,1.2,length(fwidth(original_pos)*240.0));
-    if(material_kind>0.5 && material_kind<1.5){ // woven satin
-        float weave=sin(uv.x*650.0)*sin(uv.y*430.0)*exp(-max(fwidth(uv.x)*650.0,fwidth(uv.y)*430.0));
-        albedo*=1.0+.012*weave;
-        rough+=.012*weave;
-        surface_height=.00012*weave;
+    if(material_kind<.5){ // smooth dielectric; keep the finish clean and even
+        // Smoothness comes from the authored roughness, not synthetic grain.
+    }
+    else if(material_kind<1.5 && material_kind>.5){ // silk satin: long floats over a fine crossed weave
+        float warpPhase=uv.x*240.0+sin(uv.y*24.0)*.28;
+        float weftPhase=uv.y*180.0+sin(uv.x*22.0)*.22;
+        float aa=exp(-max(abs(fwidth(warpPhase)),abs(fwidth(weftPhase))));
+        float warp=sin(warpPhase),weft=sin(weftPhase);
+        float weave=(warp*.62+weft*.24+warp*weft*.14)*aa;
+        albedo*=1.0+.055*weave;
+        rough=clamp(rough+.07*weave,.12,.98);
+        surface_height=.00030*weave;
     }
     else if(material_kind<2.5 && material_kind>1.5){ // pressed pigment
         albedo*=1.0+grain*2.0;
@@ -187,11 +209,14 @@ void main(){
         }
         rough=clamp(rough,.30,.85);
     }
-    else if(material_kind>9.5 && material_kind<10.5){ // brushed gold-plated hardware
-        float stroke=sin(original_pos.y*330.0+sin(original_pos.x*33.0)*.6);
-        float aa=1.0-smoothstep(.35,1.2,abs(fwidth(original_pos.y))*330.0);
-        albedo*=1.0+.04*stroke*aa;rough+=.035*stroke*aa;
-        surface_height=.000065*stroke*aa;
+    else if(material_kind>9.5 && material_kind<10.5){ // gold-plated metal with UV-aligned brushed grain
+        float brushPhase=uv.y*260.0+sin(uv.x*17.0)*.45+sin(uv.x*61.0)*.06;
+        float aa=exp(-abs(fwidth(brushPhase)));
+        float stroke=sin(brushPhase)*aa;
+        float broadWear=sin(uv.y*22.0+sin(uv.x*4.0))*.5;
+        albedo*=1.0+.12*stroke+.025*broadWear;
+        rough=clamp(rough+.08*stroke,.12,.98);
+        surface_height=.00028*stroke;
     }
     else if(material_kind>10.5 && material_kind<12.5){ // granular pressed powder
         vec2 p=original_pos.xy;
@@ -325,7 +350,7 @@ void main(){
     float keyShadow=shadowVisibility(shadow_map,shadow_pos,.00045+(1.0-diffuse)*.00025);
     float keyDistance=length(light_position-world_pos);
     vec3 keyRadiance=vec3(1.0,.93,.81)*key_gain*160.0/(1.0+keyDistance*keyDistance);
-    vec3 c=directBRDF(n,v,l,albedo,rough,metalness)*keyRadiance*keyShadow;
+    vec3 c=directBRDF(n,v,l,albedo,rough,metalness,surfaceTangent)*keyRadiance*keyShadow;
     vec3 startA=show_origin+vec3(-2.9,4.9,-2.5),startB=show_origin+vec3(2.9,4.9,-2.8);
     vec3 la=normalize(startA-world_pos),lb=normalize(startB-world_pos);
     float coneA=coneLight(world_pos-show_origin,vec3(-2.9,4.9,-2.5),show_target_a,show_cones.x);
@@ -334,8 +359,8 @@ void main(){
     float shadowB=shadowVisibility(shadow_map_b,light_matrix_b*vec4(world_pos,1),.000055+.000085*(1.0-max(0.0,dot(n,lb))));
     vec3 radianceA=show_color_a*coneA*show_cones.z*230.0/(1.0+dot(startA-world_pos,startA-world_pos));
     vec3 radianceB=show_color_b*coneB*show_cones.w*230.0/(1.0+dot(startB-world_pos,startB-world_pos));
-    c+=directBRDF(n,v,la,albedo,rough,metalness)*radianceA*shadowA;
-    c+=directBRDF(n,v,lb,albedo,rough,metalness)*radianceB*shadowB;
+    c+=directBRDF(n,v,la,albedo,rough,metalness,surfaceTangent)*radianceA*shadowA;
+    c+=directBRDF(n,v,lb,albedo,rough,metalness,surfaceTangent)*radianceB*shadowB;
     // Low environment fill, not uniformly bright paint in the shadows.
     c+=albedo*(1.0-metalness)*vec3(.022,.020,.019)*(.55+.45*max(0.0,n.y))*ao;
     if(matte_support<.5){
@@ -345,20 +370,21 @@ void main(){
         c+=reflectedEnvironment*environmentF*(.80-.25*rough)*ao;
     }
     c+=sceneEnvironment(n,1.0)*albedo*(1.0-metalness)*.10*ao;
-    if((material_kind>0.5 && material_kind<1.5)||(material_kind>20.5 && material_kind<21.5)){
-        vec3 tangent=dFdx(world_pos)*dFdy(uv.y)-dFdy(world_pos)*dFdx(uv.y);
-        if(length(tangent)>.000001){
-            vec3 across=normalize(cross(n,normalize(tangent)));
-            float satin=pow(max(0.0,1.0-pow(dot(h,across),2.0)),12.0);
-            c+=albedo*.055*satin*diffuse*keyShadow;
-        }
+    if(material_kind>0.5 && material_kind<1.5){
+        vec3 across=normalize(cross(n,surfaceTangent));
+        float satin=pow(max(0.0,1.0-pow(dot(h,across),2.0)),18.0);
+        c+=albedo*.12*satin*diffuse*keyShadow;
+    }else if(material_kind>20.5 && material_kind<21.5){
+        vec3 across=normalize(cross(n,surfaceTangent));
+        float satin=pow(max(0.0,1.0-pow(dot(h,across),2.0)),12.0);
+        c+=albedo*.055*satin*diffuse*keyShadow;
     }
     c*=ao*(1.0+rig_lighting.x*.25);
     float final_alpha=opacity;
     if(material_kind>6.5 && material_kind<7.5){
         float glass_fres=.04+.96*fres;
         c=sceneEnvironment(reflect(-v,n),max(.08,rough))*glass_fres+albedo*diffuse*.025;
-        c+=directBRDF(n,v,l,vec3(.96),.14,0.0)*keyRadiance*keyShadow*.65;
+        c+=directBRDF(n,v,l,vec3(.96),.14,0.0,surfaceTangent)*keyRadiance*keyShadow*.65;
         final_alpha=.12+glass_fres*.75;
     }
     if(linear_capture>.5){frag=vec4(c/(c+vec3(.85)),1.0);return;}

@@ -9,12 +9,12 @@
   "profile": 10,
   "sourceVersion": "v4",
   "parameters": {
-    "rough": 0.35,
-    "metal": 0,
+    "rough": 0.32,
+    "metal": 1,
     "gold_finish": true,
     "matte_support": false
   },
   "license": "Unverified project provenance; see provenance-v4.json.",
-  "description": "Fine directional brushed-metal grooves. Color is supplied by a separate named Color resource.",
+  "description": "Gold-plated conductor with anisotropic reflections and visible directional brushing. Color supplies the alloy tint; the material uses full metalness.",
   "defaultColorId": "ymir/color-d60cf4127bcea3@1"
 }

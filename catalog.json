@@ -407,14 +407,14 @@
       "profile": 1,
       "sourceVersion": "v4",
       "parameters": {
-        "rough": 0.35,
+        "rough": 0.3,
         "metal": 0,
         "gold_finish": false,
         "matte_support": false
       },
       "license": "Unverified; see README.md#licensing.",
       "manifest": "materials/surfaces/woven-satin/material.json",
-      "description": "Surface response and microgeometry, independent of Color.",
+      "description": "Silk satin with a smooth lustrous face, a fine crossed warp/weft pattern, and a colored directional sheen. Color remains a separate named resource.",
       "defaultColorId": "ymir/color-d60cf4127bcea3@1"
     },
     {
@@ -449,14 +449,14 @@
       "profile": 0,
       "sourceVersion": "v4",
       "parameters": {
-        "rough": 0.35,
+        "rough": 0.18,
         "metal": 0,
         "gold_finish": false,
         "matte_support": false
       },
       "license": "Unverified; see README.md#licensing.",
       "manifest": "materials/surfaces/studio-surface/material.json",
-      "description": "Smooth micrograin finish with adjustable roughness and metalness. Existing slot overrides determine whether it represents polished metal, a satin metal finish, or a nonmetallic surface.",
+      "description": "Clean, polished dielectric surface with no added grain or relief. Roughness controls highlight width; slot overrides can reuse this smooth response for other finishes.",
       "defaultColorId": "ymir/color-d60cf4127bcea3@1"
     },
     {
@@ -470,14 +470,14 @@
       "profile": 10,
       "sourceVersion": "v4",
       "parameters": {
-        "rough": 0.35,
-        "metal": 0,
+        "rough": 0.32,
+        "metal": 1,
         "gold_finish": true,
         "matte_support": false
       },
       "license": "Unverified; see README.md#licensing.",
       "manifest": "materials/surfaces/brushed-gold/material.json",
-      "description": "Fine directional brushed-metal grooves. Color is supplied by a separate named Color resource.",
+      "description": "Gold-plated conductor with anisotropic reflections and visible directional brushing. Color supplies the alloy tint; the material uses full metalness.",
       "defaultColorId": "ymir/color-d60cf4127bcea3@1"
     },
     {

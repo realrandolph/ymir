@@ -256,5 +256,5 @@ function animate(t){
   }
   requestAnimationFrame(animate);
 }requestAnimationFrame(animate);
-await select(readOnly?library.catalog.assets.find(a=>a.type==='prop')??library.catalog.assets[0]:library.catalog.assets.find(a=>a.sourceVersion==='v4'&&/mirror/i.test(a.name))??library.catalog.assets[0]);
+await select(library.catalog.assets.find(a=>a.id==='grwm/hatc-gold-clip-dc7c5a60a1@3')??(readOnly?library.catalog.assets.find(a=>a.type==='prop')??library.catalog.assets[0]:library.catalog.assets.find(a=>a.sourceVersion==='v4'&&/mirror/i.test(a.name))??library.catalog.assets[0]));
 window.__ymir={get catalog(){return library.catalog;},select,draw,get rotation(){return turn;},get zoom(){return zoom;}};

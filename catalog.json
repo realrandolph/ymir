@@ -5,33 +5,117 @@
     {
       "schemaVersion": 2,
       "type": "model",
-      "id": "ymir/model-60b00e9a58b9c179@1",
-      "name": "Nail Polish Applicator",
+      "id": "ymir/model-9665f73478184407@1",
+      "name": "Curved Gold Hinged Barrette",
+      "description": "Closed-state barrette with a flattened, capped curved shell, hinged spring arm, hinge pin, and receiving catch.",
+      "tags": [
+        "hair accessory",
+        "hinged barrette"
+      ],
+      "bounds": [
+        [
+          -0.09710408002138138,
+          -0.007000000000000001,
+          -0.141
+        ],
+        [
+          0.09710408002138138,
+          0.01968249991722405,
+          0.11002500355243683
+        ]
+      ],
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "models/9665f73478184407/model.json",
+      "partCount": 3
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-65e2e4ad3cc0b615@1",
+      "name": "Ribboned Gift Case",
       "description": "",
       "tags": [],
       "license": "Unverified; see README.md#licensing.",
-      "manifest": "models/60b00e9a58b9c179/model.json",
-      "partCount": 3,
+      "manifest": "models/65e2e4ad3cc0b615/model.json",
+      "partCount": 11,
       "slots": [
         {
           "id": "surface-1",
-          "name": "Polish Brush Cap",
+          "name": "Case Body",
           "partIds": [
             "part-1"
           ]
         },
         {
           "id": "surface-2",
-          "name": "Attached Applicator Shaft",
+          "name": "Closed Lid Piping",
           "partIds": [
             "part-2"
           ]
         },
         {
           "id": "surface-3",
-          "name": "Lacquer-Wet Brush Bristles",
+          "name": "Front Clasp",
           "partIds": [
             "part-3"
+          ]
+        },
+        {
+          "id": "surface-4",
+          "name": "Joined Leather Handle",
+          "partIds": [
+            "part-4"
+          ]
+        },
+        {
+          "id": "surface-5",
+          "name": "Handle Mount",
+          "partIds": [
+            "part-5",
+            "part-6"
+          ]
+        },
+        {
+          "id": "surface-6",
+          "name": "Silk Bow Loop",
+          "partIds": [
+            "part-7",
+            "part-9"
+          ]
+        },
+        {
+          "id": "surface-7",
+          "name": "Silk Bow Tail",
+          "partIds": [
+            "part-8",
+            "part-10"
+          ]
+        },
+        {
+          "id": "surface-8",
+          "name": "Tied Knot",
+          "partIds": [
+            "part-11"
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "type": "model",
+      "id": "ymir/model-31787465f69ace95@1",
+      "name": "Faceted Accent Crystal",
+      "description": "",
+      "tags": [],
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "models/31787465f69ace95/model.json",
+      "partCount": 1,
+      "slots": [
+        {
+          "id": "surface-1",
+          "name": "Mounted Accent Crystal",
+          "partIds": [
+            "part-1"
           ]
         }
       ]
@@ -66,65 +150,33 @@
     {
       "schemaVersion": 2,
       "type": "model",
-      "id": "ymir/model-8a0fc2c01a8b9994@1",
-      "name": "Gift Silk Ribbon",
+      "id": "ymir/model-60b00e9a58b9c179@1",
+      "name": "Nail Polish Applicator",
       "description": "",
       "tags": [],
       "license": "Unverified; see README.md#licensing.",
-      "manifest": "models/8a0fc2c01a8b9994/model.json",
-      "partCount": 1,
+      "manifest": "models/60b00e9a58b9c179/model.json",
+      "partCount": 3,
       "slots": [
         {
           "id": "surface-1",
-          "name": "Clearance-Routed Gift Ribbon",
+          "name": "Polish Brush Cap",
           "partIds": [
             "part-1"
           ]
-        }
-      ]
-    },
-    {
-      "schemaVersion": 2,
-      "type": "model",
-      "id": "ymir/model-9665f73478184407@1",
-      "name": "Curved Gold Hinged Barrette",
-      "description": "Closed-state barrette with a flattened, capped curved shell, hinged spring arm, hinge pin, and receiving catch.",
-      "tags": [
-        "hair accessory",
-        "hinged barrette"
-      ],
-      "bounds": [
-        [
-          -0.09710408002138138,
-          -0.007000000000000001,
-          -0.141
-        ],
-        [
-          0.09710408002138138,
-          0.01968249991722405,
-          0.11002500355243683
-        ]
-      ],
-      "license": "Unverified; see README.md#licensing.",
-      "manifest": "models/9665f73478184407/model.json",
-      "partCount": 3
-    },
-    {
-      "schemaVersion": 2,
-      "type": "model",
-      "id": "ymir/model-31787465f69ace95@1",
-      "name": "Faceted Accent Crystal",
-      "description": "",
-      "tags": [],
-      "license": "Unverified; see README.md#licensing.",
-      "manifest": "models/31787465f69ace95/model.json",
-      "partCount": 1,
-      "slots": [
+        },
         {
-          "id": "surface-1",
-          "name": "Mounted Accent Crystal",
+          "id": "surface-2",
+          "name": "Attached Applicator Shaft",
           "partIds": [
-            "part-1"
+            "part-2"
+          ]
+        },
+        {
+          "id": "surface-3",
+          "name": "Lacquer-Wet Brush Bristles",
+          "partIds": [
+            "part-3"
           ]
         }
       ]
@@ -262,41 +314,51 @@
       ]
     },
     {
-      "id": "grwm/gift-connecting-silk-881b1bf633@1",
-      "type": "prop",
-      "name": "Gift Silk Ribbon",
+      "schemaVersion": 3,
+      "id": "grwm/gift-case@1",
       "version": 1,
+      "type": "prop",
+      "name": "Ribboned Gift Case",
       "bounds": [
         [
-          -1.6939334869384766,
-          -0.8117888569831848,
-          -0.07867512851953506
+          -0.7875000238418579,
+          0.0,
+          -0.48750001192092896
         ],
         [
-          1.598507285118103,
-          2.0081868171691895,
-          0.0007063407101668417
+          0.7875000238418579,
+          1.5275558233261108,
+          0.5174999833106995
         ]
       ],
       "sourceScene": 15,
       "reviewStatus": "work-in-progress",
       "license": "Unverified; see README.md#licensing.",
-      "manifest": "props/gift-connecting-silk-881b1bf633/asset.json",
-      "sourceVersion": "v3",
       "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
       "materialUpgrade": "v4; original v3 geometry retained",
-      "schemaVersion": 3,
-      "modelId": "ymir/model-8a0fc2c01a8b9994@1",
-      "model": "models/8a0fc2c01a8b9994/model.json",
-      "defaultVariant": "default",
+      "description": "",
+      "tags": [],
+      "defaultVariant": "variant-1",
+      "sourceVersion": "v3",
+      "manifest": "props/gift-case/asset.json",
       "variants": [
         {
-          "id": "default",
-          "name": "Original Finish",
+          "id": "variant-1",
+          "name": "Ivory Case \u00b7 Blue Ribbon",
           "description": "",
-          "tags": []
+          "tags": [],
+          "sourceAssetId": "grwm/beauty-gift-0-e1dd3cec79@1"
+        },
+        {
+          "id": "variant-2",
+          "name": "Blue Case \u00b7 Ivory Ribbon",
+          "description": "",
+          "tags": [],
+          "sourceAssetId": "grwm/beauty-gift-1-4c94d8316d@1"
         }
-      ]
+      ],
+      "modelId": "ymir/model-65e2e4ad3cc0b615@1",
+      "model": "models/65e2e4ad3cc0b615/model.json"
     },
     {
       "schemaVersion": 3,
@@ -336,6 +398,27 @@
     },
     {
       "schemaVersion": 1,
+      "id": "grwm/woven-satin@3",
+      "name": "Silk \u00b7 Satin Weave",
+      "type": "material",
+      "version": 3,
+      "suite": "ymir-surfaces@1",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "profile": 1,
+      "sourceVersion": "v4",
+      "parameters": {
+        "rough": 0.35,
+        "metal": 0,
+        "gold_finish": false,
+        "matte_support": false
+      },
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "materials/surfaces/woven-satin/material.json",
+      "description": "Surface response and microgeometry, independent of Color.",
+      "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+    },
+    {
+      "schemaVersion": 1,
       "id": "grwm/velvet-fuzz@3",
       "name": "Soft Pile Fabric",
       "type": "material",
@@ -353,6 +436,27 @@
       "license": "Unverified; see README.md#licensing.",
       "manifest": "materials/surfaces/velvet-fuzz/material.json",
       "description": "Fine fuzzy pile with a soft grazing-angle sheen.",
+      "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "grwm/studio-surface@3",
+      "name": "Smooth Surface",
+      "type": "material",
+      "version": 3,
+      "suite": "ymir-surfaces@1",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "profile": 0,
+      "sourceVersion": "v4",
+      "parameters": {
+        "rough": 0.35,
+        "metal": 0,
+        "gold_finish": false,
+        "matte_support": false
+      },
+      "license": "Unverified; see README.md#licensing.",
+      "manifest": "materials/surfaces/studio-surface/material.json",
+      "description": "Smooth micrograin finish with adjustable roughness and metalness. Existing slot overrides determine whether it represents polished metal, a satin metal finish, or a nonmetallic surface.",
       "defaultColorId": "ymir/color-d60cf4127bcea3@1"
     },
     {
@@ -399,192 +503,6 @@
     },
     {
       "schemaVersion": 1,
-      "id": "grwm/woven-satin@3",
-      "name": "Silk \u00b7 Satin Weave",
-      "type": "material",
-      "version": 3,
-      "suite": "ymir-surfaces@1",
-      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
-      "profile": 1,
-      "sourceVersion": "v4",
-      "parameters": {
-        "rough": 0.35,
-        "metal": 0,
-        "gold_finish": false,
-        "matte_support": false
-      },
-      "license": "Unverified; see README.md#licensing.",
-      "manifest": "materials/surfaces/woven-satin/material.json",
-      "description": "Surface response and microgeometry, independent of Color.",
-      "defaultColorId": "ymir/color-d60cf4127bcea3@1"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "grwm/studio-surface@3",
-      "name": "Smooth Surface",
-      "type": "material",
-      "version": 3,
-      "suite": "ymir-surfaces@1",
-      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
-      "profile": 0,
-      "sourceVersion": "v4",
-      "parameters": {
-        "rough": 0.35,
-        "metal": 0,
-        "gold_finish": false,
-        "matte_support": false
-      },
-      "license": "Unverified; see README.md#licensing.",
-      "manifest": "materials/surfaces/studio-surface/material.json",
-      "description": "Smooth micrograin finish with adjustable roughness and metalness. Existing slot overrides determine whether it represents polished metal, a satin metal finish, or a nonmetallic surface.",
-      "defaultColorId": "ymir/color-d60cf4127bcea3@1"
-    },
-    {
-      "schemaVersion": 1,
-      "type": "color",
-      "id": "ymir/palette-4d1e8789be93c7@1",
-      "name": "Rose 2",
-      "description": "Shared solid palette Color.",
-      "tags": [
-        "palette",
-        "solid"
-      ],
-      "generator": "solid",
-      "parameters": {
-        "primary": [
-          0.63,
-          0.12,
-          0.25
-        ],
-        "secondary": [
-          0.63,
-          0.12,
-          0.25
-        ],
-        "pattern": -1,
-        "scale": [
-          1,
-          1
-        ],
-        "offset": [
-          0,
-          0
-        ]
-      },
-      "manifest": "colors/palette-4d1e8789be93c7/color.json",
-      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
-      "license": "Unverified; see README.md#licensing."
-    },
-    {
-      "schemaVersion": 1,
-      "type": "color",
-      "id": "ymir/color-086d55461ff86a@1",
-      "name": "Solid Blue",
-      "description": "Reusable albedo only; does not set surface roughness, normals or lighting.",
-      "tags": [
-        "solid",
-        "palette"
-      ],
-      "parameters": {
-        "primary": [
-          0.2,
-          0.36,
-          0.59
-        ],
-        "secondary": [
-          0.55,
-          0.12,
-          0.18
-        ],
-        "pattern": -1,
-        "scale": [
-          1,
-          1
-        ],
-        "offset": [
-          0,
-          0
-        ]
-      },
-      "manifest": "colors/086d55461ff86a/color.json",
-      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
-      "generator": "solid",
-      "license": "Unverified; see README.md#licensing."
-    },
-    {
-      "schemaVersion": 1,
-      "type": "color",
-      "id": "ymir/palette-625e5cd9485082@1",
-      "name": "Pale Orange 1",
-      "description": "Shared solid palette Color.",
-      "tags": [
-        "palette",
-        "solid"
-      ],
-      "generator": "solid",
-      "parameters": {
-        "primary": [
-          0.92,
-          0.8,
-          0.64
-        ],
-        "secondary": [
-          0.92,
-          0.8,
-          0.64
-        ],
-        "pattern": -1,
-        "scale": [
-          1,
-          1
-        ],
-        "offset": [
-          0,
-          0
-        ]
-      },
-      "manifest": "colors/palette-625e5cd9485082/color.json",
-      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
-      "license": "Unverified; see README.md#licensing."
-    },
-    {
-      "schemaVersion": 1,
-      "type": "color",
-      "id": "ymir/color-4492452086e893@1",
-      "name": "Solid Black",
-      "description": "Reusable albedo only; does not set surface roughness, normals or lighting.",
-      "tags": [
-        "solid",
-        "palette"
-      ],
-      "parameters": {
-        "primary": [
-          0.015,
-          0.011,
-          0.017
-        ],
-        "secondary": [
-          0.55,
-          0.12,
-          0.18
-        ],
-        "pattern": -1,
-        "scale": [
-          1,
-          1
-        ],
-        "offset": [
-          0,
-          0
-        ]
-      },
-      "manifest": "colors/4492452086e893/color.json",
-      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
-      "generator": "solid",
-      "license": "Unverified; see README.md#licensing."
-    },
-    {
-      "schemaVersion": 1,
       "type": "color",
       "id": "ymir/color-b24b7d82828478@1",
       "name": "Solid Ivory",
@@ -622,26 +540,26 @@
     {
       "schemaVersion": 1,
       "type": "color",
-      "id": "ymir/color-8ef8afeda40127@1",
-      "name": "Tortoise Shell",
-      "description": "Amber and dark-brown procedural marbling for the shell variant.",
+      "id": "ymir/palette-c5345beaaa1071@1",
+      "name": "Bright Gold",
+      "description": "Bright golden-yellow pigment, including the existing scalloped vanity mirror metal tint. No surface response is encoded in this Color.",
       "tags": [
-        "pattern",
-        "tortoise"
+        "palette",
+        "solid"
       ],
-      "generator": "marbling",
+      "generator": "solid",
       "parameters": {
         "primary": [
-          0.16,
-          0.045,
-          0.012
+          0.98,
+          0.7,
+          0.1
         ],
         "secondary": [
-          0.58,
-          0.24,
-          0.055
+          0.98,
+          0.7,
+          0.1
         ],
-        "pattern": 5,
+        "pattern": -1,
         "scale": [
           1,
           1
@@ -651,15 +569,15 @@
           0
         ]
       },
-      "manifest": "colors/8ef8afeda40127/color.json",
+      "manifest": "colors/palette-c5345beaaa1071/color.json",
       "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
       "license": "Unverified; see README.md#licensing."
     },
     {
       "schemaVersion": 1,
       "type": "color",
-      "id": "ymir/color-d60cf4127bcea3@1",
-      "name": "Solid Gold",
+      "id": "ymir/color-4492452086e893@1",
+      "name": "Solid Black",
       "description": "Reusable albedo only; does not set surface roughness, normals or lighting.",
       "tags": [
         "solid",
@@ -667,9 +585,9 @@
       ],
       "parameters": {
         "primary": [
-          0.7,
-          0.43,
-          0.13
+          0.015,
+          0.011,
+          0.017
         ],
         "secondary": [
           0.55,
@@ -686,7 +604,7 @@
           0
         ]
       },
-      "manifest": "colors/d60cf4127bcea3/color.json",
+      "manifest": "colors/4492452086e893/color.json",
       "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
       "generator": "solid",
       "license": "Unverified; see README.md#licensing."
@@ -730,42 +648,6 @@
     {
       "schemaVersion": 1,
       "type": "color",
-      "id": "ymir/palette-c5345beaaa1071@1",
-      "name": "Bright Gold",
-      "description": "Bright golden-yellow pigment, including the existing scalloped vanity mirror metal tint. No surface response is encoded in this Color.",
-      "tags": [
-        "palette",
-        "solid"
-      ],
-      "generator": "solid",
-      "parameters": {
-        "primary": [
-          0.98,
-          0.7,
-          0.1
-        ],
-        "secondary": [
-          0.98,
-          0.7,
-          0.1
-        ],
-        "pattern": -1,
-        "scale": [
-          1,
-          1
-        ],
-        "offset": [
-          0,
-          0
-        ]
-      },
-      "manifest": "colors/palette-c5345beaaa1071/color.json",
-      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
-      "license": "Unverified; see README.md#licensing."
-    },
-    {
-      "schemaVersion": 1,
-      "type": "color",
       "id": "ymir/palette-0360e04213f56b@1",
       "name": "Rose 1",
       "description": "Shared solid palette Color.",
@@ -797,6 +679,186 @@
       },
       "manifest": "colors/palette-0360e04213f56b/color.json",
       "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "license": "Unverified; see README.md#licensing."
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/color-d60cf4127bcea3@1",
+      "name": "Solid Gold",
+      "description": "Reusable albedo only; does not set surface roughness, normals or lighting.",
+      "tags": [
+        "solid",
+        "palette"
+      ],
+      "parameters": {
+        "primary": [
+          0.7,
+          0.43,
+          0.13
+        ],
+        "secondary": [
+          0.55,
+          0.12,
+          0.18
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/d60cf4127bcea3/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "generator": "solid",
+      "license": "Unverified; see README.md#licensing."
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/palette-625e5cd9485082@1",
+      "name": "Pale Orange 1",
+      "description": "Shared solid palette Color.",
+      "tags": [
+        "palette",
+        "solid"
+      ],
+      "generator": "solid",
+      "parameters": {
+        "primary": [
+          0.92,
+          0.8,
+          0.64
+        ],
+        "secondary": [
+          0.92,
+          0.8,
+          0.64
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/palette-625e5cd9485082/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "license": "Unverified; see README.md#licensing."
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/palette-4d1e8789be93c7@1",
+      "name": "Rose 2",
+      "description": "Shared solid palette Color.",
+      "tags": [
+        "palette",
+        "solid"
+      ],
+      "generator": "solid",
+      "parameters": {
+        "primary": [
+          0.63,
+          0.12,
+          0.25
+        ],
+        "secondary": [
+          0.63,
+          0.12,
+          0.25
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/palette-4d1e8789be93c7/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "license": "Unverified; see README.md#licensing."
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/color-8ef8afeda40127@1",
+      "name": "Tortoise Shell",
+      "description": "Amber and dark-brown procedural marbling for the shell variant.",
+      "tags": [
+        "pattern",
+        "tortoise"
+      ],
+      "generator": "marbling",
+      "parameters": {
+        "primary": [
+          0.16,
+          0.045,
+          0.012
+        ],
+        "secondary": [
+          0.58,
+          0.24,
+          0.055
+        ],
+        "pattern": 5,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/8ef8afeda40127/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "license": "Unverified; see README.md#licensing."
+    },
+    {
+      "schemaVersion": 1,
+      "type": "color",
+      "id": "ymir/color-086d55461ff86a@1",
+      "name": "Solid Blue",
+      "description": "Reusable albedo only; does not set surface roughness, normals or lighting.",
+      "tags": [
+        "solid",
+        "palette"
+      ],
+      "parameters": {
+        "primary": [
+          0.2,
+          0.36,
+          0.59
+        ],
+        "secondary": [
+          0.55,
+          0.12,
+          0.18
+        ],
+        "pattern": -1,
+        "scale": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "manifest": "colors/086d55461ff86a/color.json",
+      "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+      "generator": "solid",
       "license": "Unverified; see README.md#licensing."
     }
   ],

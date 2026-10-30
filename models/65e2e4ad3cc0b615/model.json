@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 2,
+  "type": "model",
+  "id": "ymir/model-65e2e4ad3cc0b615@1",
+  "name": "Ribboned Gift Case",
+  "description": "",
+  "tags": [],
+  "mesh": "mesh.bin",
+  "meshSha256": "294135e53228a0d31c347c9ce8b186565a802f52148f7f410224d1ecb666e990",
+  "parts": [
+    {
+      "id": "part-1",
+      "vertex_offset": 0,
+      "index_offset": 110592,
+      "vertex_count": 3456,
+      "index_count": 19044,
+      "pos": [
+        0,
+        0.5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Case Body",
+      "slotId": "surface-1"
+    },
+    {
+      "id": "part-2",
+      "vertex_offset": 186768,
+      "index_offset": 235920,
+      "vertex_count": 1536,
+      "index_count": 8100,
+      "pos": [
+        0,
+        0.915,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Closed Lid Piping",
+      "slotId": "surface-2"
+    },
+    {
+      "id": "part-3",
+      "vertex_offset": 268320,
+      "index_offset": 287520,
+      "vertex_count": 600,
+      "index_count": 2916,
+      "pos": [
+        0,
+        0.73,
+        0.5
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Front Clasp",
+      "slotId": "surface-3"
+    },
+    {
+      "id": "part-4",
+      "vertex_offset": 299184,
+      "index_offset": 327216,
+      "vertex_count": 876,
+      "index_count": 5184,
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Joined Leather Handle",
+      "slotId": "surface-4"
+    },
+    {
+      "id": "part-5",
+      "vertex_offset": 347952,
+      "index_offset": 360240,
+      "vertex_count": 384,
+      "index_count": 1764,
+      "pos": [
+        -0.38,
+        1.005,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Handle Mount",
+      "slotId": "surface-5"
+    },
+    {
+      "id": "part-6",
+      "vertex_offset": 367296,
+      "index_offset": 379584,
+      "vertex_count": 384,
+      "index_count": 1764,
+      "pos": [
+        0.38,
+        1.005,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "joint": null,
+      "name": "Handle Mount",
+      "slotId": "surface-5"
+    },
+    {
+      "id": "part-7",
+      "vertex_offset": 386640,
+      "index_offset": 441936,
+      "vertex_count": 1728,
+      "index_count": 9798,
+      "pos": [
+        0,
+        1.28,
+        0.09
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.56,
+        0.56,
+        0.56
+      ],
+      "joint": null,
+      "name": "Silk Bow Loop",
+      "slotId": "surface-6"
+    },
+    {
+      "id": "part-8",
+      "vertex_offset": 481128,
+      "index_offset": 536424,
+      "vertex_count": 1728,
+      "index_count": 9798,
+      "pos": [
+        0,
+        1.28,
+        0.09
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.56,
+        0.56,
+        0.56
+      ],
+      "joint": null,
+      "name": "Silk Bow Tail",
+      "slotId": "surface-7"
+    },
+    {
+      "id": "part-9",
+      "vertex_offset": 575616,
+      "index_offset": 630912,
+      "vertex_count": 1728,
+      "index_count": 9798,
+      "pos": [
+        0,
+        1.28,
+        0.09
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.56,
+        0.56,
+        0.56
+      ],
+      "joint": null,
+      "name": "Silk Bow Loop",
+      "slotId": "surface-6"
+    },
+    {
+      "id": "part-10",
+      "vertex_offset": 670104,
+      "index_offset": 725400,
+      "vertex_count": 1728,
+      "index_count": 9798,
+      "pos": [
+        0,
+        1.28,
+        0.09
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.56,
+        0.56,
+        0.56
+      ],
+      "joint": null,
+      "name": "Silk Bow Tail",
+      "slotId": "surface-7"
+    },
+    {
+      "id": "part-11",
+      "vertex_offset": 764592,
+      "index_offset": 783792,
+      "vertex_count": 600,
+      "index_count": 2916,
+      "pos": [
+        0,
+        1.28,
+        0.09
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.56,
+        0.56,
+        0.56
+      ],
+      "joint": null,
+      "name": "Tied Knot",
+      "slotId": "surface-8"
+    }
+  ],
+  "license": "Unverified project provenance; see provenance.json.",
+  "bounds": [
+    [
+      -0.7875000238418579,
+      0.0,
+      -0.48750001192092896
+    ],
+    [
+      0.7875000238418579,
+      1.5275558233261108,
+      0.5174999833106995
+    ]
+  ],
+  "slots": [
+    {
+      "id": "surface-1",
+      "name": "Case Body",
+      "partIds": [
+        "part-1"
+      ]
+    },
+    {
+      "id": "surface-2",
+      "name": "Closed Lid Piping",
+      "partIds": [
+        "part-2"
+      ]
+    },
+    {
+      "id": "surface-3",
+      "name": "Front Clasp",
+      "partIds": [
+        "part-3"
+      ]
+    },
+    {
+      "id": "surface-4",
+      "name": "Joined Leather Handle",
+      "partIds": [
+        "part-4"
+      ]
+    },
+    {
+      "id": "surface-5",
+      "name": "Handle Mount",
+      "partIds": [
+        "part-5",
+        "part-6"
+      ]
+    },
+    {
+      "id": "surface-6",
+      "name": "Silk Bow Loop",
+      "partIds": [
+        "part-7",
+        "part-9"
+      ]
+    },
+    {
+      "id": "surface-7",
+      "name": "Silk Bow Tail",
+      "partIds": [
+        "part-8",
+        "part-10"
+      ]
+    },
+    {
+      "id": "surface-8",
+      "name": "Tied Knot",
+      "partIds": [
+        "part-11"
+      ]
+    }
+  ]
+}

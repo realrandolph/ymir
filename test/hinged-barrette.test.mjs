@@ -36,3 +36,25 @@ test('hinged barrette has a closed shell, working mesh ranges, and all three fin
   const shell = model.parts.find(part => /shell/i.test(part.name));
   assert.ok(shell.index_count >= 6984, 'shell includes end-cap triangles');
 });
+
+test('Pages features the Ribboned Gift Case with both appearances instead of the ribbon-only model', async () => {
+  const catalog = JSON.parse(await readFile(new URL('catalog.json', root), 'utf8'));
+  const copyTool = await readFile(new URL('tools/copy-pages-assets.mjs', root), 'utf8');
+  assert.match(copyTool, /'grwm\/gift-case@1'/);
+  assert.doesNotMatch(copyTool, /'grwm\/gift-connecting-silk-881b1bf633@1'/);
+
+  const entry = catalog.assets.find(asset => asset.id === 'grwm/gift-case@1');
+  assert.ok(entry, 'Ribboned Gift Case is in the library catalog');
+  assert.deepEqual(entry.variants.map(variant => variant.name), [
+    'Ivory Case · Blue Ribbon',
+    'Blue Case · Ivory Ribbon',
+  ]);
+  const prop = JSON.parse(await readFile(new URL(entry.manifest, root), 'utf8'));
+  const modelEntry = catalog.assets.find(asset => asset.id === prop.modelId);
+  assert.ok(modelEntry, 'gift case model is in the library catalog');
+  const model = JSON.parse(await readFile(new URL(modelEntry.manifest, root), 'utf8'));
+  const mesh = await readFile(new URL(model.mesh, new URL(modelEntry.manifest, root)));
+  assert.equal(createHash('sha256').update(mesh).digest('hex'), model.meshSha256);
+  validateMesh(Uint8Array.from(mesh).buffer, model.parts);
+  assert.ok(model.parts.length > 1, 'gift case is a multi-part model');
+});

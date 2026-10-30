@@ -9,7 +9,7 @@ const featuredPropIds = [
   'grwm/faceted-crystal@1',
   'grwm/hatc-gold-clip-dc7c5a60a1@3',
   'grwm/floating-polish-applicator-dd40c98553@1',
-  'grwm/gift-connecting-silk-881b1bf633@1',
+  'grwm/gift-case@1',
   'grwm/velvet-accessory-tray-668382bd90@2',
 ];
 const entriesById = new Map(catalog.assets.map(asset => [asset.id, asset]));

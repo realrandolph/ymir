@@ -5,12 +5,14 @@ Props, Materials, and named Colors. Its local editor writes catalog metadata.
 Trinity supplies the built WebGL renderer; Ymir does not depend on Synesthesia.
 
 The public repository and [GitHub Pages demo](https://realrandolph.github.io/ymir/)
-contain the application, renderer resources, and five compact, distinct Props:
-Faceted Accent Crystal, Curved Gold Hinged Barrette, Nail Polish Applicator, Gift
-Silk Ribbon, and Velvet-Lined Accessory Tray. The barrette offers Gold, Silver, and
-Tortoise Shell appearances. Required Models, Materials, and Colors are included so
-the demo renders each Prop's authored appearance. The full working library remains
-outside this repository. Pages is read-only; the local app enables the editors.
+contain the application, renderer resources, and five distinct Props:
+Faceted Accent Crystal, Curved Gold Hinged Barrette, Nail Polish Applicator,
+Ribboned Gift Case, and Velvet-Lined Accessory Tray. The barrette offers Gold,
+Silver, and Tortoise Shell appearances; the Gift Case offers Ivory Case · Blue
+Ribbon and Blue Case · Ivory Ribbon. Required Models, Materials, and Colors are
+included so the demo renders each Prop's authored appearance. The full working
+library remains outside this repository. Pages is read-only; the local app enables
+the editors.
 
 ## Run locally
 
@@ -20,7 +22,8 @@ npm run browse
 ```
 
 Open **http://127.0.0.1:4174/**. Search and filter the catalog, inspect models,
-props and materials, change the viewing angle, or enable the turntable. Previews
+props and materials, rotate the preview by dragging left/right or middle-dragging
+on both axes, change the viewing angle, or enable the turntable. Previews
 use the installed Trinity package with actual meshes and shaders. `PORT=4180`
 selects another port. The server binds to localhost, serves Ymir and its installed
 Trinity package, and blocks hidden files and path escapes. Chrome/WebGL2 is needed

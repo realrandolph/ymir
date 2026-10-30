@@ -1,7 +1,8 @@
 import {loadLibrary,resolveColor,groupSurfaceAssignments,surfaceAssignmentName,createRenderer,model,multiply,lookAt,perspective,unit,sub,cross,dot} from 'trinity';
+import {BASE_ELEVATION,applyOrbitDrag} from './orbit-controls.js';
 const $=id=>document.getElementById(id);
 const readOnly=typeof __YMIR_READ_ONLY__!=='undefined'&&__YMIR_READ_ONLY__;
-let renderer,world,transforms,turn=0,zoom=1,generation=0,dirty=false,drag=null;
+let renderer,world,transforms,turn=0,tilt=0,zoom=1,generation=0,dirty=false,drag=null;
 let currentEntry,currentVariant,editState,editTargetState,deleteState;
 let surfaceState,selectedSlot,pickMeshes,lastCamera;
 const library=await loadLibrary(new URL('../',import.meta.url)).catch(e=>{$('error').textContent=e.message;throw e;});
@@ -43,7 +44,7 @@ async function select(entry,{variant=entry.defaultVariant,previewMaterial,previe
     if(['material','color'].includes(entry.type)&&(!material||!color))throw new Error('Pairing previews need an existing Material and named Color. Define a Color palette resource first if none exists.');
     const prop=entry.type==='prop'?await selectedLibrary.loadProp(entry.manifest,{variant}):entry.type==='model'?await selectedLibrary.loadModel(entry.manifest):swatch(material,color);
     if(token!==generation)return;
-    renderer?.dispose();renderer=null;if(!preserveView){turn=0;zoom=1;}
+    renderer?.dispose();renderer=null;if(!preserveView){turn=0;tilt=0;zoom=1;}
     world={index:0,start_s:0,end_s:1,background:[.58,.40,.34],accent:[.55,.12,.18],nodes:prop.nodes.map(n=>({...n,assembly:0})),rigs:[{pos:[0,0,0]}]};
     if(entry.preview==='backdrop')world.nodes=[];
     const transition={meshData:prop.raw,vertex_offset:0,...prop.nodes[0]};
@@ -145,8 +146,9 @@ $('color-form').onsubmit=async e=>{e.preventDefault();$('save-color').disabled=t
 function draw(){
   if(!renderer)return;
   const [lo,hi]=world.bounds,center=lo.map((v,i)=>(v+hi[i])/2),size=Math.max(...lo.map((v,i)=>hi[i]-v),.1);
-  const az=(Number($('angle').value)+turn)*Math.PI/180,d=size*1.8*zoom;
-  const cam={eye:[center[0]+Math.sin(az)*d,center[1]+d*.18,center[2]+Math.cos(az)*d],target:center};cam.view=lookAt(cam.eye,center);
+  const az=(Number($('angle').value)+turn)*Math.PI/180,elevation=(BASE_ELEVATION+tilt)*Math.PI/180,d=size*1.8*zoom;
+  const ring=Math.cos(elevation);
+  const cam={eye:[center[0]+Math.sin(az)*ring*d,center[1]+Math.sin(elevation)*d,center[2]+Math.cos(az)*ring*d],target:center};cam.view=lookAt(cam.eye,center);
   lastCamera=cam;
   renderer.render({t:0,world,transforms,cam,projection:perspective(50*Math.PI/180,1,.01,Math.max(100,d*4)),selectedRig:{id:0}});
 }
@@ -234,10 +236,15 @@ if(readOnly&&!library.catalog.assets.some(a=>a.type==='prop'))$('type').value='m
 if(readOnly)for(const id of ['new-color','delete','edit'])$(id).hidden=true;
 list();
 const preview=$('preview');preview.style.touchAction='none';preview.style.cursor='grab';
-preview.onpointerdown=e=>{if(e.button!==0)return;drag={id:e.pointerId,x:e.clientX,startX:e.clientX,startY:e.clientY};preview.setPointerCapture(e.pointerId);preview.style.cursor='grabbing';};
-preview.onpointermove=e=>{if(!drag||drag.id!==e.pointerId)return;drag.moved||=Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>5;turn-=(e.clientX-drag.x)*.4;drag.x=e.clientX;dirty=true;};
-function endDrag(e){if(drag?.id!==e.pointerId)return;const click=e.type==='pointerup'&&!drag.moved&&Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)<5;drag=null;preview.style.cursor='grab';if(preview.hasPointerCapture(e.pointerId))preview.releasePointerCapture(e.pointerId);if(click)pickPart(e);}
+preview.onpointerdown=e=>{if(e.button!==0&&e.button!==1)return;e.preventDefault();drag={id:e.pointerId,button:e.button,x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY};preview.setPointerCapture(e.pointerId);preview.style.cursor='grabbing';};
+preview.onpointermove=e=>{if(!drag||drag.id!==e.pointerId)return;drag.moved||=Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>5;
+  // Orbit the camera opposite the equivalent model rotation: right is CCW around +Y;
+  // middle-drag down is CCW around +X. Primary drag retains horizontal orbit only.
+   ({turn,tilt}=applyOrbitDrag(turn,tilt,drag.button,e.clientX-drag.x,e.clientY-drag.y));
+   drag.x=e.clientX;drag.y=e.clientY;dirty=true;};
+function endDrag(e){if(drag?.id!==e.pointerId)return;const click=drag.button===0&&e.type==='pointerup'&&!drag.moved&&Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)<5;drag=null;preview.style.cursor='grab';if(preview.hasPointerCapture(e.pointerId))preview.releasePointerCapture(e.pointerId);if(click)pickPart(e);}
 preview.onpointerup=endDrag;preview.onpointercancel=endDrag;preview.onlostpointercapture=()=>{drag=null;preview.style.cursor='grab';};
+preview.addEventListener('auxclick',e=>{if(e.button===1)e.preventDefault();});
 preview.addEventListener('wheel',e=>{
   if(!renderer)return;
   e.preventDefault();
@@ -257,4 +264,4 @@ function animate(t){
   requestAnimationFrame(animate);
 }requestAnimationFrame(animate);
 await select(library.catalog.assets.find(a=>a.id==='grwm/hatc-gold-clip-dc7c5a60a1@3')??(readOnly?library.catalog.assets.find(a=>a.type==='prop')??library.catalog.assets[0]:library.catalog.assets.find(a=>a.sourceVersion==='v4'&&/mirror/i.test(a.name))??library.catalog.assets[0]));
-window.__ymir={get catalog(){return library.catalog;},select,draw,get rotation(){return turn;},get zoom(){return zoom;}};
+window.__ymir={get catalog(){return library.catalog;},select,draw,get rotation(){return turn;},get tilt(){return tilt;},get zoom(){return zoom;}};

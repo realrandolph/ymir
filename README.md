@@ -5,13 +5,13 @@ Props, Materials, and named Colors. Its local editor writes catalog metadata.
 Trinity supplies the built WebGL renderer; Ymir does not depend on Synesthesia.
 
 The public repository and [GitHub Pages demo](https://realrandolph.github.io/ymir/)
-contain the application, renderer resources, and five distinct Props:
+contain the application, renderer resources, all 26 Materials, and five distinct Props:
 Faceted Accent Crystal, Curved Gold Hinged Barrette, Nail Polish Applicator,
 Ribboned Gift Case, and Velvet-Lined Accessory Tray. The barrette offers Gold,
 Silver, and Tortoise Shell appearances; the Gift Case offers Ivory Case · Blue
 Ribbon and Blue Case · Ivory Ribbon. Required Models, Materials, and Colors are
-included so the demo renders each Prop's authored appearance. The full working
-library remains outside this repository. Pages is read-only; the local app enables
+included so the demo renders each Prop's authored appearance. Other Models and
+Props remain in the full local library. Pages is read-only; the local app enables
 the editors.
 
 ## Run locally

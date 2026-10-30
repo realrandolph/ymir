@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/quilted-fabric@3",
+  "name": "Quilted Fabric",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 6,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.84,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Matte quilted cloth with raised padded cells, softened woven faces, and shallow depressed seams.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}

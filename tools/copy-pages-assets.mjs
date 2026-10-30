@@ -28,7 +28,9 @@ async function copyFromRoot(relative) {
 }
 
 const modelIds = new Set(featuredProps.map(prop => prop.modelId));
-const materialIds = new Set();
+// Publish the complete material library so every shader profile can be explored
+// in the read-only Pages viewer, not just the finishes used by featured Props.
+const materialIds = new Set(catalog.assets.filter(asset => asset.type === 'material').map(asset => asset.id));
 const colorIds = new Set();
 for (const prop of featuredProps) {
   const asset = JSON.parse(await readFile(path.resolve(root, prop.manifest), 'utf8'));

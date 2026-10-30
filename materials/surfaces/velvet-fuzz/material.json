@@ -9,12 +9,12 @@
   "profile": 4,
   "sourceVersion": "v4",
   "parameters": {
-    "rough": 0.35,
+    "rough": 0.94,
     "metal": 0,
     "gold_finish": false,
     "matte_support": false
   },
   "license": "Unverified project provenance; see provenance-v4.json.",
-  "description": "Fine fuzzy pile with a soft grazing-angle sheen.",
-  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+  "description": "Deep matte velvet pile with softly mottled fibers, broad diffuse backscatter, and a restrained grazing-angle sheen.",
+  "defaultColorId": "ymir/color-086d55461ff86a@1"
 }

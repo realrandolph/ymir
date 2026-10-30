@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/sewn-leather@3",
+  "name": "Sewn Leather",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 9,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.72,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Nonmetallic leather with fine pores, mottled grain, and visible seam relief.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}

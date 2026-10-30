@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "type": "material",
+  "id": "ymir/plaster@1",
+  "name": "Plaster",
+  "profile": 25,
+  "version": 1,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "parameters": {
+    "rough": 0.96,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "description": "Very matte plaster with broad trowelled undulation and fine mineral stipple.",
+  "defaultColorId": "ymir/color-b24b7d82828478@1"
+}

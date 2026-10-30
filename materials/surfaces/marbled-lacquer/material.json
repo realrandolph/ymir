@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/marbled-lacquer@3",
+  "name": "Lacquer",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 5,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.18,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Glossy lacquer clear-coat response with subtle flowing microrelief; Color resources carry visible marbling and pigment.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}

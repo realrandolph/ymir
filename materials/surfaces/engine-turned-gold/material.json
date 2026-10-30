@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/engine-turned-gold@3",
+  "name": "Engine-Turned Metal",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 19,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.28,
+    "metal": 1,
+    "gold_finish": true,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Gold conductor with repeating engine-turned cuts and radial facets; Color supplies the alloy tint.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}

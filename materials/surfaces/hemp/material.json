@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "type": "material",
+  "id": "ymir/hemp@1",
+  "name": "Hemp",
+  "version": 1,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 24,
+  "parameters": {
+    "rough": 0.94,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "description": "Coarse matte hemp with irregular, strongly visible crossed fibers.",
+  "defaultColorId": "ymir/color-b24b7d82828478@1"
+}

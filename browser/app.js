@@ -2,7 +2,7 @@ import {loadLibrary,resolveColor,groupSurfaceAssignments,surfaceAssignmentName,c
 import {BASE_ELEVATION,applyOrbitDrag} from './orbit-controls.js';
 const $=id=>document.getElementById(id);
 const readOnly=typeof __YMIR_READ_ONLY__!=='undefined'&&__YMIR_READ_ONLY__;
-let renderer,world,transforms,turn=0,tilt=0,zoom=1,generation=0,dirty=false,drag=null;
+let renderer,world,transforms,previewTransition=null,turn=0,tilt=0,zoom=1,generation=0,dirty=false,drag=null;
 let currentEntry,currentVariant,editState,editTargetState,deleteState;
 let surfaceState,selectedSlot,pickMeshes,lastCamera;
 const library=await loadLibrary(new URL('../',import.meta.url)).catch(e=>{$('error').textContent=e.message;throw e;});
@@ -26,6 +26,7 @@ function swatch(material,color){
 }
 async function select(entry,{variant=entry.defaultVariant,previewMaterial,previewColor}={}){
   const preserveView=currentEntry?.id===entry.id;
+  previewTransition=null;
   currentEntry=entry;currentVariant=variant;
   const modelEntry=library.catalog.assets.find(a=>a.id===entry.modelId);
   const related=library.catalog.assets.filter(a=>a.type==='prop'&&a.modelId===(entry.modelId??entry.id));
@@ -45,17 +46,20 @@ async function select(entry,{variant=entry.defaultVariant,previewMaterial,previe
     const prop=entry.type==='prop'?await selectedLibrary.loadProp(entry.manifest,{variant}):entry.type==='model'?await selectedLibrary.loadModel(entry.manifest):swatch(material,color);
     if(token!==generation)return;
     renderer?.dispose();renderer=null;if(!preserveView){turn=0;tilt=0;zoom=1;}
-    world={index:0,start_s:0,end_s:1,background:[.58,.40,.34],accent:[.55,.12,.18],nodes:prop.nodes.map(n=>({...n,assembly:0})),rigs:[{pos:[0,0,0]}]};
+    const isMaterialSwatch=['material','color'].includes(entry.type),previewNodes=prop.nodes.map(n=>({...n,assembly:0}));
+    world={index:0,start_s:0,end_s:1,background:[.58,.40,.34],accent:[.55,.12,.18],nodes:isMaterialSwatch?[]:previewNodes,rigs:[{pos:[0,0,0]}]};
     if(entry.preview==='backdrop')world.nodes=[];
     const transition={meshData:prop.raw,vertex_offset:0,...prop.nodes[0]};
-    const candidate=await createRenderer({canvas:$('preview'),book:{worlds:[{...world,meshData:prop.raw}],transition},shaders:selectedLibrary.shaders,quality:{shadowSize:1024,cacheEnvironment:true,synchronize:false}});
+    const candidate=await createRenderer({canvas:$('preview'),book:{worlds:[{...world,meshData:prop.raw}],transition},shaders:selectedLibrary.shaders,quality:{shadowSize:2048,cacheEnvironment:true,synchronize:false}});
     if(token!==generation){candidate.dispose();return;}renderer=candidate;
     world.bounds=prop.asset.bounds;
-    transforms=world.nodes.map(n=>{
+    const transformFor=n=>{
       let matrix=model(n.pos,n.scale,n.rot);
       if(n.joint)matrix=multiply(model(n.joint.pivot,[1,1,1],[n.joint.rest_degrees,0,0]),matrix);
       return {model:matrix,art:[0,0,0,0],perc:[0,0,0,0],voice:[0,0,0,0],extra:[0,0,0,0]};
-    });
+    };
+    transforms=world.nodes.map(transformFor);
+    if(isMaterialSwatch)previewTransition={node:previewNodes[0],transform:transformFor(previewNodes[0]),world};
     pickMeshes=['prop','model'].includes(entry.type)?world.nodes.map((n,index)=>{
       const vertices=new Float32Array(prop.raw,n.vertex_offset,n.vertex_count*8),matrix=transforms[index].model;
       const points=[];for(let i=0;i<vertices.length;i+=8){const v=vertices.subarray(i,i+3);points.push([0,1,2].map(k=>matrix[k]*v[0]+matrix[k+4]*v[1]+matrix[k+8]*v[2]+matrix[k+12]));}
@@ -150,7 +154,7 @@ function draw(){
   const ring=Math.cos(elevation);
   const cam={eye:[center[0]+Math.sin(az)*ring*d,center[1]+Math.sin(elevation)*d,center[2]+Math.cos(az)*ring*d],target:center};cam.view=lookAt(cam.eye,center);
   lastCamera=cam;
-  renderer.render({t:0,world,transforms,cam,projection:perspective(50*Math.PI/180,1,.01,Math.max(100,d*4)),selectedRig:{id:0}});
+  renderer.render({t:0,world,transforms,cam,projection:perspective(50*Math.PI/180,1,.01,Math.max(100,d*4)),selectedRig:{id:0},...(previewTransition?{transition:previewTransition}:{})});
 }
 function pickPart(e){
   if(!lastCamera||!['prop','model'].includes(currentEntry?.type))return;

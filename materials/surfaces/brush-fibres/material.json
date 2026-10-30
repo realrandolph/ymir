@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/brush-fibres@3",
+  "name": "Longitudinal Bristle Fibres",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 14,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.9,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Dense longitudinal bristle fibers with a rough diffuse body and a soft directional edge sheen.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}

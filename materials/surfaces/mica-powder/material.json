@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/mica-powder@3",
+  "name": "Mica Powder",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 12,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.78,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Rough cosmetic powder with sparse brighter mica flecks and a subdued particulate surface.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}

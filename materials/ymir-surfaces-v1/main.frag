@@ -59,8 +59,12 @@ float shadowVisibility(sampler2D map,vec4 clip,float bias){
     if(clip.w<=0.0||p.x<0.0||p.x>1.0||p.y<0.0||p.y>1.0||p.z<0.0||p.z>1.0)return 1.0;
     float visibility=0.0;
     vec2 step=1.0/vec2(textureSize(map,0));
-    for(int x=-1;x<=1;x++)for(int y=-1;y<=1;y++){
-        float d=texture(map,p.xy+vec2(x,y)*step*1.4).r;
+    const vec2 taps[9]=vec2[9](
+        vec2(-.613,.617),vec2(.170,-.040),vec2(-.299,-.792),
+        vec2(.646,.493),vec2(-.652,-.274),vec2(.421,-.714),
+        vec2(-.817,.271),vec2(.875,-.312),vec2(.028,.994));
+    for(int i=0;i<9;i++){
+        float d=texture(map,p.xy+taps[i]*step*2.0).r;
         visibility += p.z-bias<d?1.0:0.0;
     }
     return visibility/9.0;
@@ -138,6 +142,9 @@ void main(){
     vec3 tangentRaw=dFdx(world_pos)*dFdy(uv.y)-dFdy(world_pos)*dFdx(uv.y);
     if(length(tangentRaw)<.000001)tangentRaw=cross(n,abs(n.y)<.9?vec3(0,1,0):vec3(1,0,0));
     vec3 surfaceTangent=normalize(tangentRaw-n*dot(n,tangentRaw));
+    vec3 brushTangentRaw=vec3(0,1,0)-n*n.y;
+    if(length(brushTangentRaw)<.0001)brushTangentRaw=vec3(1,0,0)-n*n.x;
+    vec3 brushTangent=normalize(brushTangentRaw);
     vec3 v=normalize(camera_position-world_pos);
     vec3 l=normalize(light_position-world_pos);
     vec3 h=normalize(v+l);
@@ -161,32 +168,43 @@ void main(){
         surface_height=.00030*weave;
     }
     else if(material_kind<2.5 && material_kind>1.5){ // pressed pigment
-        albedo*=1.0+grain*2.0;
+        albedo*=1.0+grain*1.4;
         float emboss=sin(uv.x*80.0+sin(uv.y*25.0))*sin(uv.y*48.0);
         albedo*=.97+.03*emboss;
-        surface_height=.00025*emboss;
+        rough=clamp(rough+.06*emboss,.72,.98);
+        surface_height=.00035*emboss;
     }
     else if(material_kind<3.5 && material_kind>2.5){ // glass / reflective vanity
-        albedo=mix(albedo,roughRoom(reflect(-v,n),rough),.82);
+        if(metalness<.5)albedo=mix(albedo,roughRoom(reflect(-v,n),rough),.82);
         rough*=.8;
     }
     else if(material_kind<4.5 && material_kind>3.5){ // powder-puff fibres
-        float fuzz=pow(max(0.0,1.0-abs(dot(n,v))),2.0);
-        albedo*=1.0+grain*.7;
-        albedo+=vec3(.12,.10,.075)*fuzz;
+        vec2 pilePos=original_pos.xz;
+        float clump=surfaceNoise(pilePos*28.0)-.5;
+        float nap=(hash(floor(original_pos*48.0))-.5)*(1.0-smoothstep(.35,1.2,length(fwidth(original_pos)*48.0)));
+        float fiberPhase=original_pos.x*110.0+sin(original_pos.z*18.0)*.4;
+        float fiber=sin(fiberPhase)*exp(-abs(fwidth(fiberPhase)));
+        albedo*=1.0+.10*clump+.045*fiber+.06*nap;
+        rough=clamp(max(rough,.92)+.025*clump+.02*nap,.88,.99);
+        surface_height=.00040*clump+.00020*fiber+.00015*nap;
     }
     else if(material_kind<5.5 && material_kind>4.5){ // code marbled lacquer
         float m=sin(original_pos.x*3.0+sin(original_pos.z*4.0+original_pos.y*2.0)*2.0);
         m=pow(.5+.5*m,4.0);
-
+        rough=clamp(rough+.045*(.5-m),.12,.42);
+        surface_height=.000035*(m-.5);
     }
     else if(material_kind<6.5 && material_kind>5.5){ // quilted vanity case
         vec2 cell=fract(uv*vec2(10.0,7.0))-.5;
         float tuft=exp(-dot(cell,cell)*55.0);
         float seam=pow(max(0.0,1.0-abs(sin((uv.x+uv.y)*45.0))),12.0);
         albedo*=1.0-tuft*.22-seam*.065;
+        rough=clamp(rough+.06*tuft+.12*seam,.65,.98);
+        surface_height=.00065*tuft-.00038*seam;
     }
-    else if(material_kind>6.5 && material_kind<7.5){} // transparent tint, no surface pigment attenuation
+    else if(material_kind>6.5 && material_kind<7.5){ // clear dielectric glass
+        rough=clamp(rough,.04,.25);
+    }
     else if(material_kind>7.5 && material_kind<9.5){ // scene-local sewn leather
         vec2 leather=original_pos.xy;
         float pore=sin(leather.x*133.0+sin(leather.y*97.0)*1.7)*sin(leather.y*121.0+sin(leather.x*81.0));
@@ -209,14 +227,15 @@ void main(){
         }
         rough=clamp(rough,.30,.85);
     }
-    else if(material_kind>9.5 && material_kind<10.5){ // gold-plated metal with UV-aligned brushed grain
-        float brushPhase=uv.y*260.0+sin(uv.x*17.0)*.45+sin(uv.x*61.0)*.06;
+    else if(material_kind>9.5 && material_kind<10.5){ // object-aligned brushing avoids UV-pole banding
+        float brushCoord=original_pos.x+.003*sin(original_pos.z*12.0)+.001*sin(original_pos.y*9.0);
+        float brushPhase=brushCoord*110.0;
         float aa=exp(-abs(fwidth(brushPhase)));
         float stroke=sin(brushPhase)*aa;
-        float broadWear=sin(uv.y*22.0+sin(uv.x*4.0))*.5;
+        float broadWear=sin(brushCoord*14.0+sin(original_pos.z*4.0))*.5;
         albedo*=1.0+.12*stroke+.025*broadWear;
         rough=clamp(rough+.08*stroke,.12,.98);
-        surface_height=.00028*stroke;
+        surface_height=.00022*stroke;
     }
     else if(material_kind>10.5 && material_kind<12.5){ // granular pressed powder
         vec2 p=original_pos.xy;
@@ -237,9 +256,9 @@ void main(){
         float cloud=sin(original_pos.x*13.0+sin(original_pos.y*17.0))*sin(original_pos.z*19.0+original_pos.y*8.0);
         float aa=1.0-smoothstep(.35,1.4,length(fwidth(original_pos)*120.0));
         float speck=hash(floor(original_pos*120.0));
-
-        rough+=.025*cloud+.03*(speck-.5)*aa;
-        surface_height=.00010*cloud;
+        albedo*=1.0+.055*cloud+.12*(speck-.5)*aa;
+        rough=clamp(rough+.025*cloud+.06*(speck-.5)*aa,.18,.6);
+        surface_height=.00018*cloud+.00010*(speck-.5)*aa;
     }
     else if(material_kind>13.5 && material_kind<14.5){ // longitudinal brush fibres
         float angle=atan(original_pos.z,original_pos.x);
@@ -252,10 +271,11 @@ void main(){
     }
     else if(material_kind>14.5 && material_kind<15.5){ // readable woven silk swatch
         vec2 p=original_pos.xz;
-        float aa=exp(-max(fwidth(p.x)*180.0,fwidth(p.y)*150.0));
-        float weave=sin(p.x*180.0)*sin(p.y*150.0)*aa;
-        albedo*=1.0+.12*weave;rough+=.08*weave;
-        surface_height=.00016*weave;
+        float aa=exp(-max(fwidth(p.x)*140.0,fwidth(p.y)*120.0));
+        float weave=sin(p.x*140.0+sin(p.y*18.0)*.3)*sin(p.y*120.0)*aa;
+        albedo*=1.0+.10*weave;
+        rough=clamp(rough+.12*weave,.22,.8);
+        surface_height=.00026*weave;
     }
     else if(material_kind>15.5 && material_kind<16.5){ // shared approved lacquered timber
         vec2 p=original_pos.xz;
@@ -308,31 +328,41 @@ void main(){
         float nap=(hash(floor(original_pos*125.0))-.5)*aa;
         float cloud=sin(original_pos.x*25.0+sin(original_pos.z*18.0))*sin(original_pos.z*31.0);
         albedo*=1.0+.11*nap+.035*cloud;
-        albedo+=vec3(.12,.09,.06)*pow(1.0-abs(dot(n,v)),2.0);
+        albedo+=albedo*.16*pow(1.0-abs(dot(n,v)),2.0);
         rough=.96;
         surface_height=.00012*cloud+.00010*nap;
     }
     else if(material_kind>20.5 && material_kind<21.5){ // flowing silk / sewn band
-        float warp=uv.x*700.0,weft=uv.y*145.0;
+        float warp=uv.x*420.0,weft=uv.y*125.0;
         float aa=exp(-max(fwidth(warp),fwidth(weft)));
-        float weave=sin(warp)*sin(weft)*aa;
-        albedo*=1.0+.12*weave;rough=clamp(rough+.065*weave,.29,.66);
-        surface_height=.00013*weave;
+        float weave=sin(warp+sin(weft*.12)*.35)*sin(weft)*aa;
+        albedo*=1.0+.10*weave;
+        rough=clamp(rough+.08*weave,.24,.68);
+        surface_height=.00022*weave;
     }
     else if(material_kind>21.5 && material_kind<22.5){ // softly moulded wax
         float aa=exp(-length(fwidth(original_pos))*155.0);
         float wax=(hash(floor(original_pos*155.0))-.5)*aa;
-        albedo*=1.0+.045*wax;
-        rough=clamp(rough+.035*wax,.27,.42);
-        surface_height=.00004*wax;
+        albedo*=1.0+.07*wax;
+        rough=clamp(rough+.055*wax,.24,.55);
+        surface_height=.00009*wax;
     }
-    else if(material_kind>22.5 && material_kind<23.5){ // cotton: matte fine crossed fibres
-        float weave=sin(uv.x*430.)*sin(uv.y*410.)*exp(-max(fwidth(uv.x)*430.,fwidth(uv.y)*410.));
-        rough=clamp(rough+.035*weave,.72,.98);surface_height=.00022*weave;
+    else if(material_kind>22.5 && material_kind<23.5){ // cotton: matte, regular crossed plain weave
+        float warpPhase=uv.x*270.0+sin(uv.y*32.0)*.15,weftPhase=uv.y*250.0+sin(uv.x*27.0)*.12;
+        float aa=exp(-max(abs(fwidth(warpPhase)),abs(fwidth(weftPhase))));
+        float warp=sin(warpPhase),weft=sin(weftPhase),weave=(warp*.55+weft*.35+warp*weft*.10)*aa;
+        albedo*=1.0+.045*weave;
+        rough=clamp(rough+.06*weave,.76,.99);
+        surface_height=.00038*weave;
     }
     else if(material_kind>23.5 && material_kind<24.5){ // hemp: coarse irregular crossed fibres
-        float weave=sin(uv.x*170.+sin(uv.y*35.)*.7)*sin(uv.y*145.)*exp(-max(fwidth(uv.x)*170.,fwidth(uv.y)*145.));
-        rough=clamp(rough+.065*weave,.78,1.);surface_height=.00055*weave;
+        float warpPhase=uv.x*150.0+sin(uv.y*30.0)*.7,weftPhase=uv.y*130.0+sin(uv.x*34.0)*.7;
+        float aa=exp(-max(abs(fwidth(warpPhase)),abs(fwidth(weftPhase))));
+        float weave=sin(warpPhase)*sin(weftPhase)*aa;
+        float broad=sin(uv.x*28.0+uv.y*11.0+sin(uv.y*7.0));
+        albedo*=1.0+.06*weave+.035*broad;
+        rough=clamp(rough+.10*weave+.04*broad,.78,1.0);
+        surface_height=.00085*weave+.00035*broad;
     }
     else if(material_kind>24.5 && material_kind<25.5){
         float trowel=surfaceNoise(original_pos.xy*1.6)-.5;
@@ -350,7 +380,7 @@ void main(){
     float keyShadow=shadowVisibility(shadow_map,shadow_pos,.00045+(1.0-diffuse)*.00025);
     float keyDistance=length(light_position-world_pos);
     vec3 keyRadiance=vec3(1.0,.93,.81)*key_gain*160.0/(1.0+keyDistance*keyDistance);
-    vec3 c=directBRDF(n,v,l,albedo,rough,metalness,surfaceTangent)*keyRadiance*keyShadow;
+    vec3 c=directBRDF(n,v,l,albedo,rough,metalness,brushTangent)*keyRadiance*keyShadow;
     vec3 startA=show_origin+vec3(-2.9,4.9,-2.5),startB=show_origin+vec3(2.9,4.9,-2.8);
     vec3 la=normalize(startA-world_pos),lb=normalize(startB-world_pos);
     float coneA=coneLight(world_pos-show_origin,vec3(-2.9,4.9,-2.5),show_target_a,show_cones.x);
@@ -359,10 +389,18 @@ void main(){
     float shadowB=shadowVisibility(shadow_map_b,light_matrix_b*vec4(world_pos,1),.000055+.000085*(1.0-max(0.0,dot(n,lb))));
     vec3 radianceA=show_color_a*coneA*show_cones.z*230.0/(1.0+dot(startA-world_pos,startA-world_pos));
     vec3 radianceB=show_color_b*coneB*show_cones.w*230.0/(1.0+dot(startB-world_pos,startB-world_pos));
-    c+=directBRDF(n,v,la,albedo,rough,metalness,surfaceTangent)*radianceA*shadowA;
-    c+=directBRDF(n,v,lb,albedo,rough,metalness,surfaceTangent)*radianceB*shadowB;
+    c+=directBRDF(n,v,la,albedo,rough,metalness,brushTangent)*radianceA*shadowA;
+    c+=directBRDF(n,v,lb,albedo,rough,metalness,brushTangent)*radianceB*shadowB;
     // Low environment fill, not uniformly bright paint in the shadows.
     c+=albedo*(1.0-metalness)*vec3(.022,.020,.019)*(.55+.45*max(0.0,n.y))*ao;
+    if((material_kind>3.5 && material_kind<4.5)||(material_kind>19.5 && material_kind<20.5)){
+        bool longPile=material_kind<4.5;
+        float sheenRough=longPile?.72:.86,alphaG=sheenRough*sheenRough,invR=1.0/alphaG;
+        float sheenNdotH=max(0.0,dot(n,h));
+        float sheenD=(2.0+invR)*pow(max(0.0,1.0-sheenNdotH*sheenNdotH),invR*.5)/6.2831853;
+        float sheenV=1.0/max(4.0*(diffuse+nv-diffuse*nv),.001);
+        c+=albedo*(longPile?.28:.16)*sheenD*sheenV*diffuse*keyRadiance*keyShadow;
+    }
     if(matte_support<.5){
         vec3 reflectedEnvironment=sceneEnvironment(reflect(-v,n),rough);
         vec3 grazingEnvironment=gold_finish>.5?mix(vec3(1),clamp(albedo,0.,1.),.60):vec3(1);

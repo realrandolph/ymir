@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/flowing-silk@3",
+  "name": "Silk \u00b7 Flowing Weave",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 21,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.32,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Flowing silk with long warp floats, broad directional sheen, and a soft cloth weave.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}

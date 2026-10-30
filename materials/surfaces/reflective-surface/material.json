@@ -9,12 +9,12 @@
   "profile": 3,
   "sourceVersion": "v4",
   "parameters": {
-    "rough": 0.35,
-    "metal": 0,
+    "rough": 0.1,
+    "metal": 1,
     "gold_finish": false,
     "matte_support": false
   },
   "license": "Unverified project provenance; see provenance-v4.json.",
-  "description": "Highly reflective glass surface with softened environment reflections.",
-  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+  "description": "Polished, neutral silvered mirror: low-roughness metalized reflection over a glass substrate. Color supplies the coating tint.",
+  "defaultColorId": "ymir/palette-7aad1b191a8b0d@1"
 }

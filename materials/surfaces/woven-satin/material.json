@@ -15,6 +15,6 @@
     "matte_support": false
   },
   "license": "Unverified project provenance; see provenance-v4.json.",
-  "description": "Silk satin with a smooth lustrous face, a fine crossed warp/weft pattern, and a colored directional sheen. Color remains a separate named resource.",
+  "description": "Silk satin with a smooth lustrous face, fine crossed warp/weft pattern, and directional colored sheen. Color remains a separate named resource.",
   "defaultColorId": "ymir/color-d60cf4127bcea3@1"
 }

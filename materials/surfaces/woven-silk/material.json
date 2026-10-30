@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/woven-silk@3",
+  "name": "Silk \u00b7 Open Weave",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 15,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.48,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Open silk weave with readable crossed threads, moderate cloth roughness, and a gentle directional sheen.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "grwm/speckled-bakelite@3",
+  "name": "Bakelite",
+  "type": "material",
+  "version": 3,
+  "suite": "ymir-surfaces@1",
+  "suiteManifest": "materials/ymir-surfaces-v1/suite.json",
+  "profile": 13,
+  "sourceVersion": "v4",
+  "parameters": {
+    "rough": 0.3,
+    "metal": 0,
+    "gold_finish": false,
+    "matte_support": false
+  },
+  "license": "Unverified project provenance; see provenance-v4.json.",
+  "description": "Polished nonmetallic Bakelite with mottled body color, small speckles, and shallow surface grain.",
+  "defaultColorId": "ymir/color-d60cf4127bcea3@1"
+}
